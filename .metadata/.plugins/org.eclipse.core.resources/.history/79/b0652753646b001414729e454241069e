@@ -1,0 +1,9 @@
+package escape;
+
+public class Switch {
+
+	public Switch() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

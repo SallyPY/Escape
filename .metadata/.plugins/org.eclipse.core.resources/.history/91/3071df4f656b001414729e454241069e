@@ -1,0 +1,9 @@
+package escape;
+
+public class SwitchMGPanel {
+
+	public SwitchMGPanel() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

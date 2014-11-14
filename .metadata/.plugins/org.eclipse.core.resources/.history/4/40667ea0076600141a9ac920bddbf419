@@ -1,0 +1,24 @@
+package escape;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.border.*;
+
+
+public class EscapeGame {
+
+	private EscapeGame() {
+		super("Escape!");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setContentPane(new BouncePanel());
+		pack();
+		setVisible(true);
+		}
+	
+	public static void main (String[] args) {
+	 new Splash();
+	}
+
+
+}

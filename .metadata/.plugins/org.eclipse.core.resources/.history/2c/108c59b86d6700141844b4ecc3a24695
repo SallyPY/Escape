@@ -1,0 +1,27 @@
+package escape;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+public class ButtonPanel extends JPanel{
+	
+	public ButtonPanel(){
+		super();
+		setLayout(new FlowLayout(FlowLayout.CENTER, 50, 0));
+		setBackground(new Color(0,0,0,0));
+		startButton = new JButton("Start");
+		startButton.setFocusable(false);
+		add(startButton);
+		
+		exitButton = new JButton("Exit");
+		exitButton.setFocusable(false);
+		add(exitButton);
+	}
+
+}
+
+
+}

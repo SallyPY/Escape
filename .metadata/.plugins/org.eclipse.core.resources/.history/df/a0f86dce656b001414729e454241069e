@@ -1,0 +1,20 @@
+package escape;
+
+import java.awt.CardLayout;
+
+import javax.swing.JPanel;
+
+public class SwitchMGPanel extends JPanel{
+	CardLayout cl;
+	public SwitchMGPanel() {
+		super();
+		
+		setLayout(cl);
+		add(new MainMenu(this), "1");
+		add(new GamePanel(), "2");
+		cl.show(this, "1");
+
+		
+	}
+
+}

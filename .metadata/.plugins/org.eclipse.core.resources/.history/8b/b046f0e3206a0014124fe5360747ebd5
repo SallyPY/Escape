@@ -1,0 +1,19 @@
+package escape;
+
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.JPanel;
+
+public class FirstWall extends JPanel{
+	private int fullSize = 500;
+
+	public FirstWall() {
+		super();
+		setPreferredSize(new Dimension(fullSize, fullSize));
+		setMaximumSize(new Dimension(fullSize, fullSize));
+	    setMinimumSize(new Dimension(fullSize, fullSize));
+		setBackground(new Color(1, 1, 1, 1));
+	}
+
+}

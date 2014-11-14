@@ -1,0 +1,9 @@
+package escape;
+
+public class FirstWall {
+
+	public FirstWall() {
+		// TODO Auto-generated constructor stub
+	}
+
+}
