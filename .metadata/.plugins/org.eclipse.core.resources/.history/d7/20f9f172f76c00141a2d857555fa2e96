@@ -1,0 +1,48 @@
+package escape;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.Image;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+
+public class ImageSpacePanel extends JPanel{
+	
+	ImageButton[] ib = new ImageButton[8];
+	JPanel[][] panelHolder;
+
+	public ImageSpacePanel() {
+		super();
+		
+		int i = 4;
+		int j = 2;
+		panelHolder = new JPanel[i][j];    
+		setLayout(new GridLayout(i,j));
+		setBackground(Color.BLACK);
+
+		for(int m = 0; m < i; m++) {
+		   for(int n = 0; n < j; n++) {
+		      panelHolder[m][n] = new JPanel();
+		      add(panelHolder[m][n]);
+		   }
+		}
+		
+		panelHolder[0][0].add(new JButton(new ImageIcon(((new ImageIcon("src/images/x.png")).getImage()))));
+	
+		
+		//add
+		
+		//add(new ImageButton(new ImageIcon(getClass().getResource("src/images/blue.png")), 1));
+		//for(int i = 0; i<8; i++){
+			//ib[i] = new ImageButton(i);
+			//add(ib[i]);
+		//}
+	}
+	
+	
+
+}

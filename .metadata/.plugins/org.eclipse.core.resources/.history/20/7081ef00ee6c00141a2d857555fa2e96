@@ -1,0 +1,18 @@
+package escape;
+
+import java.awt.Color;
+import java.awt.GridLayout;
+
+import javax.swing.JButton;
+import javax.swing.JPanel;
+
+public class ImageSpacePanel extends JPanel{
+
+	public ImageSpacePanel() {
+		super();
+		setLayout(new GridLayout(4,2));
+		setBackground(Color.BLACK);
+		add(new JButton("Hi"));
+	}
+
+}

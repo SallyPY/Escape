@@ -1,0 +1,9 @@
+package walls.copy;
+
+public class FirstWall {
+
+	public FirstWall() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

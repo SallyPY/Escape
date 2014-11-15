@@ -1,0 +1,36 @@
+package escape;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+
+public class ImageButton extends JButton implements ActionListener {
+	
+	boolean clicked;
+	
+
+	public ImageButton(ImageIcon m, int i) {
+		super(m);
+		/*switch(i){
+			case 1: 
+				setIcon()
+				break;
+			default:
+				break;
+		
+		}*/
+		clicked = false;
+		setVisible(false);
+			
+		addActionListener(this);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

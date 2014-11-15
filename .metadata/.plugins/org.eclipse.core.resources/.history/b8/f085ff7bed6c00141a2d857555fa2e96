@@ -1,0 +1,35 @@
+package escape;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Dimension;
+
+import javax.swing.JPanel;
+
+public class GamePanel extends JPanel{
+	
+	//ImageSpacePanel sp
+	//WallPanel w;
+	//ArrowPanel right;
+	//ArrowPanel left;
+	
+	public GamePanel() {
+		super();
+		setBackground(Color.BLUE);
+		setLayout(new BorderLayout());
+		
+		add(new ArrowPanel("right"), BorderLayout.EAST);
+		add(new ArrowPanel("left"), BorderLayout.WEST);
+		// w = new WallPanel();
+		
+		// sp = new ImageSpacePanel()
+		//add(
+		//add(w);
+		//add(sp);
+		
+		
+		
+	}
+	
+
+}

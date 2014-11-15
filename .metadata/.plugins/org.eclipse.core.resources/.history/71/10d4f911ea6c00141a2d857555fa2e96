@@ -1,0 +1,22 @@
+package escape;
+
+import java.awt.Color;
+import java.awt.FlowLayout;
+
+import javax.swing.JPanel;
+import javax.swing.plaf.basic.BasicArrowButton;
+
+public class ArrowPanel extends JPanel {
+
+	public ArrowPanel(String s) {
+		super();
+		setLayout(new FlowLayout());
+		setBackground(new Color(0, 0, 0, 125));
+		
+		if(s.equals("right"))
+			add(this, new BasicArrowButton(BasicArrowButton.EAST));
+		else if(s.equals("left"))
+			add(new BasicArrowButton(BasicArrowButton.WEST));
+	}
+
+}
