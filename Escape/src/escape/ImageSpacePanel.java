@@ -10,13 +10,14 @@ import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 
 public class ImageSpacePanel extends JPanel{
-	JPanel[][] panelHolder;
-	ImageButton[] ib = new ImageButton[8];
-	ImageButton[][] imageHolder;
+	ImagePanel[] panelHolder;
+	ImagePanel[] ib = new ImagePanel[8];
+
 
 	public ImageSpacePanel() {
 		super();
@@ -27,21 +28,18 @@ public class ImageSpacePanel extends JPanel{
 
 		JButton p = new JButton("hi");
 		
-		panelHolder = new JPanel[2][4];    
+		panelHolder = new ImagePanel[8];    
 
-		for(int m = 0; m < 2; m++) {
-		   for(int n = 0; n < 4; n++) {
-		      panelHolder[m][n] = new JPanel();
-		      panelHolder[m][n].setPreferredSize(new Dimension(40,40));
-		      panelHolder[m][n].setBorder(BorderFactory.createLineBorder(Color.BLACK));
-		      add(panelHolder[m][n]);
-		   }
+		for(int m = 0; m < 8; m++) {
+		      panelHolder[m] = new ImagePanel(m);
+		      panelHolder[m].setPreferredSize(new Dimension(50,60));
+		      panelHolder[m].setOpaque(true);
+		      panelHolder[m].setBackground(Color.WHITE);
+		      panelHolder[m].setBorder(BorderFactory.createLineBorder(Color.GRAY));
+		      add(panelHolder[m]);
+		   
 		}
 	
-		/*for(int i = 0; i<8; i++){
-			ib[i] = new ImageButton(i);
-			add(ib[i]);
-		}*/
 	}
 	
 	

@@ -12,28 +12,27 @@ import walls.WallPanel;
 
 public class GamePanel extends JPanel{
 	
-	//ImageSpacePanel sp
-	//WallPanel w;
-	//ArrowPanel right;
-	//ArrowPanel left;
+	ImageSpacePanel sp;
+	WallPanel w;
+	ArrowPanel right;
+	ArrowPanel left;
 	
 	public GamePanel() {
 		super();
-		setBackground(Color.BLUE);
+		setBackground(new Color(77,77,77));
 		setLayout(new BorderLayout());
 		
+		right = new ArrowPanel("right");
+		add(right, BorderLayout.EAST);
 		
-		add(new ArrowPanel("right"), BorderLayout.EAST);
-		add(new ArrowPanel("left"), BorderLayout.WEST);
-		add(new WallPanel(), BorderLayout.CENTER);
-	//	add(new JButton("hi",new ImageIcon("src/images/x.png")));
-		add(new ImageSpacePanel(), BorderLayout.SOUTH);
-		// w = new WallPanel();
+		left = new ArrowPanel("left");
+		add(left, BorderLayout.WEST);
 		
-		// sp = new ImageSpacePanel()
-		//add(
-		//add(w);
-		//add(sp);
+		w = new WallPanel();
+		add(w, BorderLayout.CENTER);
+		
+		sp = new ImageSpacePanel();
+		add(sp, BorderLayout.SOUTH);
 		
 		
 		
