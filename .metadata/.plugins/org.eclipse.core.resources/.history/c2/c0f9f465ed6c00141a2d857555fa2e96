@@ -1,9 +1,0 @@
-package escape;
-
-public class ImageSpacePanel {
-
-	public ImageSpacePanel() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
