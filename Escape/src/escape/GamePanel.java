@@ -8,12 +8,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
-import walls.WallPanel;
+import walls.WallBegin;
 
 public class GamePanel extends JPanel{
 	
 	ImageSpacePanel sp;
-	WallPanel w;
+	WallBegin w;
 	ArrowPanel right;
 	ArrowPanel left;
 	
@@ -22,17 +22,19 @@ public class GamePanel extends JPanel{
 		setBackground(new Color(77,77,77));
 		setLayout(new BorderLayout());
 		
-		right = new ArrowPanel("right");
-		add(right, BorderLayout.EAST);
 		
-		left = new ArrowPanel("left");
-		add(left, BorderLayout.WEST);
 		
-		w = new WallPanel();
+		w = new WallBegin();
 		add(w, BorderLayout.CENTER);
 		
 		sp = new ImageSpacePanel();
 		add(sp, BorderLayout.SOUTH);
+		
+		right = new ArrowPanel("right", w);
+		add(right, BorderLayout.EAST);
+		
+		left = new ArrowPanel("left", w);
+		add(left, BorderLayout.WEST);
 		
 		
 		

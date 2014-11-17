@@ -1,0 +1,33 @@
+package walls;
+
+import java.awt.CardLayout;
+import java.awt.Color;
+import java.awt.Component;
+
+import javax.swing.JPanel;
+
+public class WallIntro extends JPanel {
+	
+    CardLayout cl;
+    FirstWall first;
+	
+	public WallIntro(){
+		super();
+		setBackground(Color.BLACK);
+		
+		cl = new CardLayout();
+		
+		setLayout(cl);
+		
+		add(new FirstWall(),"first");
+		add(new SecondWall(),"second");
+		
+		cl.show(this, "first");	
+		
+	}
+	
+	public CardLayout getCL(){
+		return cl;
+	}
+
+}

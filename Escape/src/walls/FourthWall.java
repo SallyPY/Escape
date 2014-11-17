@@ -1,9 +1,14 @@
 package walls;
 
-public class FourthWall {
+import java.awt.Color;
+
+import javax.swing.JPanel;
+
+public class FourthWall extends JPanel{
 
 	public FourthWall() {
-		// TODO Auto-generated constructor stub
+		super();
+		setBackground(Color.GRAY);
 	}
 
 }

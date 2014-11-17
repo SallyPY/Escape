@@ -1,0 +1,5 @@
+package walls;
+
+public abstract class WallContainer extends J{
+
+}

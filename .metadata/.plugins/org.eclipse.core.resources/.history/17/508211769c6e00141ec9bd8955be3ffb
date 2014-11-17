@@ -1,0 +1,11 @@
+package walls;
+
+import java.awt.CardLayout;
+
+import javax.swing.JPanel;
+
+public abstract class WallIntro extends JPanel{
+	
+	public abstract CardLayout getCl();;
+
+}

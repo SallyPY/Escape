@@ -1,9 +1,14 @@
 package walls;
 
-public class ThirdWall {
+import java.awt.Color;
+
+import javax.swing.JPanel;
+
+public class ThirdWall extends JPanel{
 
 	public ThirdWall() {
-		// TODO Auto-generated constructor stub
+		super();
+		setBackground(Color.yellow);
 	}
 
 }

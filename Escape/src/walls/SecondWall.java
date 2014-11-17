@@ -1,9 +1,14 @@
 package walls;
 
-public class SecondWall {
+import java.awt.Color;
+
+import javax.swing.JPanel;
+
+public class SecondWall extends JPanel{
 
 	public SecondWall() {
-		// TODO Auto-generated constructor stub
+		super();
+		setBackground(Color.GREEN);
 	}
 
 }

@@ -1,0 +1,7 @@
+package walls;
+
+import javax.swing.JPanel;
+
+public abstract class WallPanel extends JPanel{
+
+}

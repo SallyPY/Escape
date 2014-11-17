@@ -7,10 +7,8 @@ import java.awt.GridLayout;
 import java.awt.Image;
 
 import javax.swing.BorderFactory;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
+
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 

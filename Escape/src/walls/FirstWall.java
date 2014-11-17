@@ -1,9 +1,14 @@
 package walls;
 
-public class FirstWall {
+import java.awt.Color;
+
+import javax.swing.JPanel;
+
+public class FirstWall extends JPanel{
 
 	public FirstWall() {
-		// TODO Auto-generated constructor stub
+		super();
+		setBackground(Color.RED);
 	}
 
 }
