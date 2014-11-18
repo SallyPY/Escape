@@ -2,9 +2,10 @@ package walls;
 
 import java.awt.CardLayout;
 import java.awt.Color;
-/*
- * Flipping through the four walls occurs here
- */
+import java.awt.Component;
+
+import javax.swing.JPanel;
+
 public class WallBegin extends WallPanel {
 	
     CardLayout cl;

@@ -1,21 +1,13 @@
 package escape;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.*;
 
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-/*
- * Game begins by showing the main menu, which contains the instructions and the buttons either starting or exiting the game
- */
+import java.awt.*;
+import java.awt.event.*;
+
+
+
+
 public class MainMenu extends JPanel implements ActionListener{
 	private JButton startButton, exitButton;
 	
@@ -42,7 +34,7 @@ public class MainMenu extends JPanel implements ActionListener{
 		c.ipady=200;
 		c.ipadx=50;
 		
-		add(new InstructionPanel(), c); //adding instructions
+		add(new InstructionPanel(), c);
 		
 		c.gridx = 0;
 		c.gridy = 1;
@@ -55,14 +47,13 @@ public class MainMenu extends JPanel implements ActionListener{
 		exitButton.addActionListener(this);
 		
 	}
-
     @Override
     protected void paintComponent(Graphics g) {
     	super.paintComponent(g);
     	g.drawImage(new ImageIcon("src/images/blue.png").getImage(),0,0,null);
     }
     
-    private class ButtonPanel extends JPanel{ //panel holding the buttons
+    private class ButtonPanel extends JPanel{
     	
     	public ButtonPanel(){
     		super();

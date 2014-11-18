@@ -2,14 +2,16 @@ package escape;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.Image;
 
 import javax.swing.BorderFactory;
+
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
-/*
- * This panel can hold a total of 8 items the user can collect and use to escape the room
- */
+
 public class ImageSpacePanel extends JPanel{
 	ImagePanel[] panelHolder;
 	ImagePanel[] ib = new ImagePanel[8];
@@ -21,7 +23,8 @@ public class ImageSpacePanel extends JPanel{
 		setLayout(new GridLayout(2,4));
 		setBackground(Color.BLUE);
 
-
+		JButton p = new JButton("hi");
+		
 		panelHolder = new ImagePanel[8];    
 
 		for(int m = 0; m < 8; m++) {

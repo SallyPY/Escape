@@ -2,15 +2,13 @@ package escape;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import walls.WallBegin;
-
-/*
- * The GamePanel holds the arrow buttons, the space containing the collected items, and the images of the room
- * The most interaction from the user will occur here
- */
 
 public class GamePanel extends JPanel{
 	
@@ -26,16 +24,16 @@ public class GamePanel extends JPanel{
 		
 		
 		
-		w = new WallBegin(); //add the sides of the rooms in the center
+		w = new WallBegin();
 		add(w, BorderLayout.CENTER);
 		
-		sp = new ImageSpacePanel();	//add the collection space at the bottom
+		sp = new ImageSpacePanel();
 		add(sp, BorderLayout.SOUTH);
 		
-		right = new ArrowPanel("right", w);	//place right arrow to the right
+		right = new ArrowPanel("right", w);
 		add(right, BorderLayout.EAST);
 		
-		left = new ArrowPanel("left", w);	//place left arrow to the left
+		left = new ArrowPanel("left", w);
 		add(left, BorderLayout.WEST);
 		
 		
