@@ -12,9 +12,10 @@ import javax.swing.JPanel;
 import javax.swing.plaf.basic.BasicArrowButton;
 
 import walls.WallPanel;
-import walls.WallBegin;
 
-
+/*
+ * ArrowPanel creates a JPanel with a specific direction-facing button that responds to clicks
+ */
 
 public class ArrowPanel extends JPanel implements ActionListener{
 	
@@ -32,30 +33,33 @@ public class ArrowPanel extends JPanel implements ActionListener{
 		setBackground(new Color(0, 0, 0, 125));
 		
 		c.insets = new Insets(0,10,0,10);
-		if(s.equals("right")){
-			arrow = new BasicArrowButton(BasicArrowButton.EAST);
+		if(s.equals("right")){		
+			arrow = new BasicArrowButton(BasicArrowButton.EAST);	/*produces a right-facing arrow*/
 			arrow.addActionListener(this);
 			add(arrow, c);
 		}
 		else if(s.equals("left")){
-			arrow = new BasicArrowButton(BasicArrowButton.WEST);
+			arrow = new BasicArrowButton(BasicArrowButton.WEST);	/*produces a left-facing arrow*/
 			arrow.addActionListener(this);
 			add(arrow,c);
 		}
 		else if(s.equals("down")){
-			arrow = new BasicArrowButton(BasicArrowButton.SOUTH);
+			arrow = new BasicArrowButton(BasicArrowButton.SOUTH);	/*produces an up-facing arrow*/
 			arrow.addActionListener(this);
 			add(arrow,c);
 		}
 		else {
-			arrow = new BasicArrowButton(BasicArrowButton.NORTH);
+			arrow = new BasicArrowButton(BasicArrowButton.NORTH);	/*produces a down-facing arrow*/
 			arrow.addActionListener(this);
 			add(arrow,c);
 		
 		}
 		
 	}
-
+	
+	/*
+	 * This method travels across the panels in CardLayout when arrow is clicked
+	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource().equals(arrow)){
