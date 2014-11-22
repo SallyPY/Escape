@@ -1,7 +1,0 @@
-package walls;
-
-import java.awt.Component;
-
-public class WallPanel extends Component {
-
-}

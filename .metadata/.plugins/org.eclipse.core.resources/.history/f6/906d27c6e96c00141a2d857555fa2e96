@@ -1,9 +1,0 @@
-package escape;
-
-public class ArrowPanel {
-
-	public ArrowPanel() {
-		// TODO Auto-generated constructor stub
-	}
-
-}
