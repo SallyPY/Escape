@@ -12,11 +12,12 @@ import javax.swing.JPanel;
  */
 public class ImageSpacePanel extends JPanel{
 	ImagePanel[] panelHolder;
-	ImagePanel[] ib = new ImagePanel[8];
+	GamePanel gp;
 
 
-	public ImageSpacePanel() {
+	public ImageSpacePanel(GamePanel gp) {
 		super();
+		this.gp = gp;
 	  
 		setLayout(new GridLayout(2,4));
 		setBackground(Color.BLUE);
@@ -25,11 +26,11 @@ public class ImageSpacePanel extends JPanel{
 		panelHolder = new ImagePanel[8];    
 
 		for(int m = 0; m < 8; m++) {
-		      panelHolder[m] = new ImagePanel(m);
+		      panelHolder[m] = new ImagePanel(m, this);
 		      panelHolder[m].setPreferredSize(new Dimension(50,60));
 		      panelHolder[m].setOpaque(true);
 		      panelHolder[m].setBackground(Color.WHITE);
-		      panelHolder[m].setBorder(BorderFactory.createLineBorder(Color.GRAY));
+		      panelHolder[m].setBorder(BorderFactory.createLineBorder(Color.BLACK));
 		      add(panelHolder[m]);
 		   
 		}

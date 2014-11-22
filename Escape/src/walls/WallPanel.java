@@ -9,6 +9,6 @@ import javax.swing.JPanel;
  */
 public abstract class WallPanel extends JPanel{
 	
-	public abstract CardLayout getCl();
+	public abstract CardLayout getCl();//dfs
 
 }

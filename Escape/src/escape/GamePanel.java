@@ -2,6 +2,8 @@ package escape;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JPanel;
 
@@ -35,12 +37,14 @@ public class GamePanel extends JPanel{
 		left = new ArrowPanel("left", w);	//place left arrow to the left
 		add(left, BorderLayout.WEST);
 		
-		sp = new ImageSpacePanel();	//add the collection space at the bottom
+		sp = new ImageSpacePanel(this);	//add the collection space at the bottom
 		add(sp, BorderLayout.SOUTH);
+		
+	
+	}
 		
 		
 		
 	}
 	
 
-}
