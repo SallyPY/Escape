@@ -21,16 +21,16 @@ public class WallBegin extends WallPanel {
 		
 		setLayout(cl);
 		
-		first = new FirstWall(this);
+		first = new FirstWall();
 		add(first,"first");
 		
-		second = new SecondWall(this);
+		second = new SecondWall();
 		add(second,"second");
 		
-		third = new ThirdWall(this);
+		third = new ThirdWall();
 		add(third,"third");
 		
-		fourth = new FourthWall(this);
+		fourth = new FourthWall();
 		add(fourth, "fourth");
 		
 		

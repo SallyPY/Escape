@@ -23,9 +23,8 @@ public class ImagePanel extends JPanel{
 		switch (m){
 			case 0:	
 				x = new JLabel(new ImageIcon(((new ImageIcon("src/images/s.png")).getImage()).getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH)));
-				x.setToolTipText("Image comment");
 				add(x);
-				
+				x.setToolTipText("An example of an x");
 				//x.setVisible(false);
 				break;
 		}

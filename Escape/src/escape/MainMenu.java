@@ -92,7 +92,7 @@ public class MainMenu extends JPanel implements ActionListener{
 		}
 		if (e.getSource().equals(startButton)) 
 		setVisible(false);
-		frame.setContentPane(new GamePanel());
+		frame.setContentPane(new GamePanel()); //begins a GamePanel
 		frame.getContentPane().remove(this);	
 		
 	}

@@ -1,10 +1,10 @@
 package escape;
 
-import javax.swing.*;
+import javax.swing.JFrame;
 
 
 
-public class EscapeGame extends JFrame{
+public class EscapeGame extends JFrame{	//sets frame
 
 	private EscapeGame() {
 		super("Escape!");
@@ -15,7 +15,7 @@ public class EscapeGame extends JFrame{
 		}
 	
 	public static void main (String[] args) {
-	 new EscapeGame();
+	 new EscapeGame();	//begins new thread
 	}
 
 

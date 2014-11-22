@@ -15,7 +15,7 @@ public class EscapeGame extends JFrame{	//sets frame
 		}
 	
 	public static void main (String[] args) {
-	 new EscapeGame();	//begins new thread
+	 new EscapeGame();	//begins new game
 	}
 
 

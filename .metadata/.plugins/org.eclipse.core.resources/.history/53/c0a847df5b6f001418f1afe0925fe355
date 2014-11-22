@@ -1,23 +1,31 @@
 package escape;
 
-import javax.swing.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-import java.awt.*;
-import java.awt.event.*;
-
-
-
-
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+/*
+ * Game begins by showing the main menu, which contains the instructions and the buttons either starting or exiting the game
+ */
 public class MainMenu extends JPanel implements ActionListener{
 	private JButton startButton, exitButton;
 	
 	private int fullSize = 500;
-	JFrame parent;
+	JFrame frame;
+
 	
 	public MainMenu(JFrame j) {
 		super();
-		parent = j;
-		
+		frame = j;
 		setPreferredSize(new Dimension(fullSize, fullSize));
 		setMaximumSize(new Dimension(fullSize, fullSize));
 	    setMinimumSize(new Dimension(fullSize, fullSize));
@@ -34,7 +42,7 @@ public class MainMenu extends JPanel implements ActionListener{
 		c.ipady=200;
 		c.ipadx=50;
 		
-		add(new InstructionPanel(), c);
+		add(new InstructionPanel(), c); //adding instructions
 		
 		c.gridx = 0;
 		c.gridy = 1;
@@ -47,13 +55,14 @@ public class MainMenu extends JPanel implements ActionListener{
 		exitButton.addActionListener(this);
 		
 	}
+
     @Override
     protected void paintComponent(Graphics g) {
     	super.paintComponent(g);
     	g.drawImage(new ImageIcon("src/images/blue.png").getImage(),0,0,null);
     }
     
-    private class ButtonPanel extends JPanel{
+    private class ButtonPanel extends JPanel{ //panel holding the buttons
     	
     	public ButtonPanel(){
     		super();
@@ -81,12 +90,11 @@ public class MainMenu extends JPanel implements ActionListener{
 		if (e.getSource().equals(exitButton)) {
 			System.exit(0);
 		}
-		if (e.getSource().equals(startButton)) {
-			  remove(this);
-        	add(new FirstWall());
-		}
-		repaint();
-        revalidate();
+		if (e.getSource().equals(startButton)) 
+		setVisible(false);
+		frame.setContentPane(new GamePanel());
+		frame.getContentPane().remove(this);	
+		
 	}
     
   

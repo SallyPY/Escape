@@ -5,12 +5,11 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
-public class ThirdWall extends WallPanel{
-	WallBegin b;
-	public ThirdWall(WallBegin b) {
+public class SecondWall extends WallPanel{
+
+	public SecondWall() {
 		super();
-		this.b = b;
-		setBackground(Color.yellow);
+		setBackground(Color.GREEN);
 	}
 
 	@Override

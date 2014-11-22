@@ -29,14 +29,14 @@ public class GamePanel extends JPanel{
 		w = new WallBegin(); //add the sides of the rooms in the center
 		add(w, BorderLayout.CENTER);
 		
+		sp = new ImageSpacePanel();	//add the collection space at the bottom
+		add(sp, BorderLayout.SOUTH);
+		
 		right = new ArrowPanel("right", w);	//place right arrow to the right
 		add(right, BorderLayout.EAST);
 		
 		left = new ArrowPanel("left", w);	//place left arrow to the left
 		add(left, BorderLayout.WEST);
-		
-		sp = new ImageSpacePanel();	//add the collection space at the bottom
-		add(sp, BorderLayout.SOUTH);
 		
 		
 		

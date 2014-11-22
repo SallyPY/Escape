@@ -9,9 +9,6 @@ public class WallBegin extends WallPanel {
 	
     CardLayout cl;
     FirstWall first;
-    SecondWall second;
-    ThirdWall third;
-    FourthWall fourth;
 	
 	public WallBegin(){
 		super();
@@ -21,18 +18,8 @@ public class WallBegin extends WallPanel {
 		
 		setLayout(cl);
 		
-		first = new FirstWall(this);
-		add(first,"first");
-		
-		second = new SecondWall(this);
-		add(second,"second");
-		
-		third = new ThirdWall(this);
-		add(third,"third");
-		
-		fourth = new FourthWall(this);
-		add(fourth, "fourth");
-		
+		add(new FirstWall(),"first");
+		add(new SecondWall(),"second");
 		
 		cl.show(this, "first");	
 		
