@@ -20,4 +20,5 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
-*.txt eol=crlf
+
+*.txt  diff=astextplain
