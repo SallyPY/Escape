@@ -9,4 +9,7 @@ The code is at the hands of a beginner and a new user to GitHub, so be aware of 
 11/15
 Having issues navigating GitHub. I will need to do more research. There is trouble with committing, branching, syncing, etc.
 
+11/22
+Finally removed that horrific metadata folder with a .gitignore file
+
 
