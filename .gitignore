@@ -31,6 +31,8 @@ Icon
 # 
 .metadata/
 
+.recommenders/
+
 
 # Thumbnails
 ._*
