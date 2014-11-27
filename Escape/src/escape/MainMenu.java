@@ -19,7 +19,7 @@ import javax.swing.JPanel;
 public class MainMenu extends JPanel implements ActionListener{
 	private JButton startButton, exitButton;
 	
-	private int fullSize = 500;
+	private int fullSize = 600;
 	JFrame frame;
 
 	
@@ -59,7 +59,7 @@ public class MainMenu extends JPanel implements ActionListener{
     @Override
     protected void paintComponent(Graphics g) {
     	super.paintComponent(g);
-    	g.drawImage(new ImageIcon("src/images/blue.png").getImage(),0,0,null);
+    	g.drawImage(new ImageIcon("src/res/blue.png").getImage(),0,0,null);
     }
     
     private class ButtonPanel extends JPanel{ //panel holding the buttons
