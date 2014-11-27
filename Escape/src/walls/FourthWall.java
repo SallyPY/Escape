@@ -5,18 +5,18 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
-public class FourthWall extends WallPanel{
+import escape.GamePanel;
+
+public class FourthWall extends JPanel{
 	WallBegin b;
-	public FourthWall(WallBegin b) {
+	GamePanel gp;
+	
+	public FourthWall(WallBegin b, GamePanel gp) {
 		super();
 		this.b = b;
+		this.gp = gp;
 		setBackground(Color.GRAY);
 	}
 
-	@Override
-	public CardLayout getCl() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

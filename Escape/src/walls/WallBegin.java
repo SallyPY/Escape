@@ -2,6 +2,8 @@ package walls;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+
+import escape.GamePanel;
 /*
  * Flipping through the four walls occurs here
  */
@@ -12,30 +14,32 @@ public class WallBegin extends WallPanel {
     SecondWall second;
     ThirdWall third;
     FourthWall fourth;
+    GamePanel gp;
 	
-	public WallBegin(){
+	public WallBegin(GamePanel g){
 		super();
+		gp = g;
 		setBackground(Color.BLACK);
 		
 		cl = new CardLayout();
 		
 		setLayout(cl);
 		
-		first = new FirstWall(this);
+		first = new FirstWall(this, gp);
 		add(first,"first");
 		
-		second = new SecondWall(this);
+		second = new SecondWall(this, gp);
 		add(second,"second");
 		
-		third = new ThirdWall(this);
+		third = new ThirdWall(this, gp);
 		add(third,"third");
 		
-		fourth = new FourthWall(this);
+		fourth = new FourthWall(this, gp);
 		add(fourth, "fourth");
 		
 		
 		cl.show(this, "first");	
-		
+		//480 px
 	}
 
 	@Override

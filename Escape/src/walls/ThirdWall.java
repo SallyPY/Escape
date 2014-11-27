@@ -5,18 +5,18 @@ import java.awt.Color;
 
 import javax.swing.JPanel;
 
-public class ThirdWall extends WallPanel{
+import escape.GamePanel;
+
+public class ThirdWall extends JPanel{
+	
 	WallBegin b;
-	public ThirdWall(WallBegin b) {
+	GamePanel gp;
+	public ThirdWall(WallBegin b, GamePanel gp) {
 		super();
 		this.b = b;
+		this.gp = gp;
 		setBackground(Color.yellow);
 	}
 
-	@Override
-	public CardLayout getCl() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }
