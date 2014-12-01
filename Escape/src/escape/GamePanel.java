@@ -1,9 +1,9 @@
 package escape;
 
+import images.ImageSpacePanel;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 import javax.swing.JPanel;
 
@@ -16,7 +16,7 @@ import walls.WallBegin;
 
 public class GamePanel extends JPanel{
 	
-	ImageSpacePanel sp;
+	public ImageSpacePanel sp;
 	WallBegin w;
 	ArrowPanel right;
 	ArrowPanel left;
@@ -27,8 +27,12 @@ public class GamePanel extends JPanel{
 		setLayout(new BorderLayout());
 		
 		
+		add(new CaptionPanel(), BorderLayout.NORTH);
 		
-		w = new WallBegin(); //add the sides of the rooms in the center
+		sp = new ImageSpacePanel(this);	//add the collection space at the bottom
+		add(sp, BorderLayout.SOUTH);
+	
+		w = new WallBegin(this, sp); //add the sides of the rooms in the center
 		add(w, BorderLayout.CENTER);
 		
 		right = new ArrowPanel("right", w);	//place right arrow to the right
@@ -37,10 +41,11 @@ public class GamePanel extends JPanel{
 		left = new ArrowPanel("left", w);	//place left arrow to the left
 		add(left, BorderLayout.WEST);
 		
-		sp = new ImageSpacePanel(this);	//add the collection space at the bottom
-		add(sp, BorderLayout.SOUTH);
-		
+	}
 	
+	public ImageSpacePanel getImageSpacePanel(){
+		return sp;
+		
 	}
 		
 		

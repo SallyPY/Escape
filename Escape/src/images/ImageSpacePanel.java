@@ -13,7 +13,7 @@ import escape.GamePanel;
  * This panel can hold a total of 8 items the user can collect and use to escape the room
  */
 public class ImageSpacePanel extends JPanel{
-	ImagePanel[] panelHolder;
+	public ImagePanel[] panelHolder;
 	GamePanel gp;
 
 
@@ -43,6 +43,7 @@ public class ImageSpacePanel extends JPanel{
 	public ImagePanel[] getPanelHolder(){
 		return panelHolder;
 	}
+	
 	
 	
 

@@ -46,8 +46,8 @@ public class MainMenu extends JPanel implements ActionListener{
 		
 		c.gridx = 0;
 		c.gridy = 1;
-		c.gridheight=20;
-		c.ipady=50;
+		//c.gridheight=20;
+		c.ipady=20;
 		c.ipadx=300;
 		c.insets= new Insets(20,0,0,0);
 		add(new ButtonPanel(),c);
@@ -59,7 +59,7 @@ public class MainMenu extends JPanel implements ActionListener{
     @Override
     protected void paintComponent(Graphics g) {
     	super.paintComponent(g);
-    	g.drawImage(new ImageIcon("src/res/blue.png").getImage(),0,0,null);
+    	g.drawImage(new ImageIcon("src/res/mainMenuBack.png").getImage(),0,0,null);
     }
     
     private class ButtonPanel extends JPanel{ //panel holding the buttons
@@ -67,7 +67,7 @@ public class MainMenu extends JPanel implements ActionListener{
     	public ButtonPanel(){
     		super();
     		setLayout(new GridBagLayout());
-    		setBackground(Color.BLACK);
+    		setBackground(new Color(69, 56, 35));
     		
     		GridBagConstraints c = new GridBagConstraints();
     		

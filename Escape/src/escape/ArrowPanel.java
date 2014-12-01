@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.plaf.basic.BasicArrowButton;
 
-import walls.WallPanel;
+import walls.WallBegin;
 
 /*
  * ArrowPanel creates a JPanel with a specific direction-facing button that responds to clicks
@@ -20,17 +20,18 @@ import walls.WallPanel;
 public class ArrowPanel extends JPanel implements ActionListener{
 	
 	BasicArrowButton arrow;
-	WallPanel parent;
+	WallBegin parent;
 	
 	CardLayout cl;
 
-	public ArrowPanel(String s, WallPanel w) {
+	public ArrowPanel(String s, WallBegin w) {
 		super();
 		parent = w;
 		cl = w.getCl();
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 		setBackground(new Color(0, 0, 0, 125));
+		
 		
 		c.insets = new Insets(0,10,0,10);
 		if(s.equals("right")){		

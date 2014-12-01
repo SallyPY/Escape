@@ -1,13 +1,8 @@
 package images;
 
-import java.awt.Color;
-import java.awt.Graphics;
 import java.awt.GridBagLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /*
@@ -29,46 +24,46 @@ public class ImagePanel extends JPanel{
 		switch (m){
 			case 0:	
 				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/bowl.png")).getImage())),space, this);
-				x.setToolTipText("This is an empty bowl.");
-				//x.setVisible(false);
+				x.setToolTipText("This is an empty bowl...");
+				x.setVisible(false);
 				add(x);
 				break;
 			case 1:
-				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/s.png")).getImage()).getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH)),space, this);
-				x.setToolTipText("Image comment");
+				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/key.png")).getImage())),space, this);
+				x.setToolTipText("A circular object...");
+				x.setVisible(false);
 				add(x);
 				break;
 			case 2:
-				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/s.png")).getImage()).getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH)),space, this);
-				x.setToolTipText("Image comment");
-				add(x);
-				break;
-			case 3:
-				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/s.png")).getImage()).getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH)),space, this);
-				x.setToolTipText("Image comment");
+				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/crowbar.png")).getImage())),space, this);
+				x.setToolTipText("A crowbar...");
+				x.setVisible(false);
 				add(x);
 				break;
 			case 4:
-				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/waterbowl.png")).getImage())),space, this);
-				x.setToolTipText("Image comment");
+				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/waterBowl.png")).getImage())),space, this);
+				x.setToolTipText("The bowl is now filled with water...");
+				x.setVisible(false);
 				add(x);
 				break;
 			case 5:
-				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/s.png")).getImage()).getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH)),space, this);
-				x.setToolTipText("Image comment");
-				add(x);
-				break;
-			case 6:
-				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/s.png")).getImage()).getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH)),space, this);
-				x.setToolTipText("Image comment");
+				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/seeds.png")).getImage())),space, this);
+				x.setToolTipText("They look like seeds...");
+				x.setVisible(false);
 				add(x);
 				break;
 		
-			default:
-				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/s.png")).getImage()).getScaledInstance(50, 50, java.awt.Image.SCALE_SMOOTH)),space, this);
-				x.setToolTipText("Image comment");
+			case 6:
+				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/finalkey.png")).getImage())),space, this);
+				x.setToolTipText("Where would this go...");
 				x.setVisible(false);
 				add(x);
+				break;
+			default:
+				x = new ImageLabel(new ImageIcon(((new ImageIcon("src/res/finalkey.png")).getImage())),space, this);
+			
+				
+		
 				
 				
 		
@@ -80,11 +75,11 @@ public class ImagePanel extends JPanel{
 		 
 	
 	}
-	boolean isClicked(){
+	public boolean isClicked(){
 		return x.clicked;
 	}
 	
-	ImageLabel getIL(){
+	public ImageLabel getIL(){
 		return x;
 	}
 
