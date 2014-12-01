@@ -12,6 +12,6 @@ Having issues navigating GitHub. I will need to do more research. There is troub
 11/22
 Removed metadata folder with a .gitignore file
 
-Formating of JAVA files off
-
+12/1
+Got a lot done over Thanksgiving break. You can actually win the game!
 
