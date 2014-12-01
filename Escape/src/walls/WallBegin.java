@@ -1,5 +1,7 @@
 package walls;
 
+import images.ImageSpacePanel;
+
 import java.awt.CardLayout;
 import java.awt.Color;
 
@@ -16,13 +18,12 @@ public class WallBegin extends WallPanel {
     FourthWall fourth;
     GamePanel gp;
 	
-	public WallBegin(GamePanel g){
+	public WallBegin(GamePanel g, ImageSpacePanel sp){
 		super();
 		gp = g;
 		setBackground(Color.BLACK);
 		
-		cl = new CardLayout();
-		
+		cl = new CardLayout();		
 		setLayout(cl);
 		
 		first = new FirstWall(this, gp);
@@ -38,11 +39,9 @@ public class WallBegin extends WallPanel {
 		add(fourth, "fourth");
 		
 		
-		cl.show(this, "first");	
-		//480 px
+		cl.show(this, "first");
 	}
 
-	@Override
 	public CardLayout getCl() {
 		return cl;
 	}

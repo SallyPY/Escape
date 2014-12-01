@@ -1,55 +1,60 @@
 package walls;
 
 import images.BufferedIm;
-import images.ImagePanel;
 
-import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.IOException;
-import java.util.LinkedList;
-
-import javax.imageio.ImageIO;
-import javax.swing.JPanel;
 
 import escape.GamePanel;
 
-public class FirstWall extends JPanel {
+public class FirstWall extends WallPanel {
 	
-	GamePanel gp;
 	
-	WallBegin b;
-	BufferedImage c; 
-	BufferedIm a;
-	BufferedIm back;
-	BufferedIm d;
+	
+	BufferedIm couch;
+	
+	BufferedIm door;
 	BufferedIm bowl;
+	BufferedIm openCouch;
+	BufferedIm key;
+	BufferedIm openDoor;
 	boolean revBowl;
 	boolean bowlClicked;
-	ImagePanel[] imPanel;
+	boolean couchClicked;
+	boolean keyClicked;
+	boolean doorUnlocked;
 	
-	LinkedList<BufferedIm> list = new LinkedList<BufferedIm>();
+	
 	public FirstWall(WallBegin b, GamePanel gp) {
 		super();
 		this.b = b;
 		this.gp = gp;
+		
 		setBackground(Color.RED);
 		
 		
-		back = new BufferedIm(new File("src/res/Background.png"));
-		a = new BufferedIm(new File("src/res/onlygreencouch.png"));
-		d = new BufferedIm(new File("src/res/onlybluedoor.png"));
-		bowl = new BufferedIm(new File("src/res/bowlbackground.png"));
+		back = new BufferedIm(new File("src/res/first/firstBack.png"));
+		black = new BufferedIm(new File("src/res/compblack.png"));
+		
+		couch = new BufferedIm(new File("src/res/first/couch.png"));
+		door = new BufferedIm(new File("src/res/first/door.png"));
+		bowl = new BufferedIm(new File("src/res/first/bowlOnGround.png"));
+		openCouch = new BufferedIm(new File("src/res/first/openCouch.png"));
+		key = new BufferedIm(new File("src/res/first/keyOnCouch.png"));
+		
+		openDoor =  new BufferedIm(new File("src/res/first/openDoor.png"));
+		
+		
 		list.add(back);
 		list.add(bowl);
-		list.add(a);
-		list.add(d);
 		
-		imPanel = gp.getImageSpacePanel().getPanelHolder();
+		list.add(door);
+		list.add(openCouch);
+		list.add(key);
+		list.add(couch);
 		
 		addMouseListener(new MyMouseListener());
 		
@@ -57,14 +62,35 @@ public class FirstWall extends JPanel {
 	
 	class MyMouseListener extends MouseAdapter{
 		public void mouseClicked(MouseEvent e){
+			
+			s = gp.getImageSpacePanel().getPanelHolder();
 			double x = e.getPoint().getX();
 			double y = e.getPoint().getY();
-			if(x > 469 && x < 486 && y > 427 && y < 438 ){
-			bowlClicked = true;
+			System.out.println(e.getPoint());
 			
-				repaint();
+			if(x > 469 && x < 489 && y > 423 && y < 438 ){
+				bowlClicked = true;
+				s[0].getIL().setVisible(true);
 			}
-				
+			
+			else if(x > 323 && x < 348 && y > 390 && y < 410 && couchClicked){
+				keyClicked = true;
+				s[1].getIL().setVisible(true);
+			}
+			
+			else if(x > 260 && x < 369 && y > 375 && y < 416){
+				couchClicked = true;		
+			}
+			
+			else if(x > 179 && x < 200 && y > 260 && y < 295){
+				if(s[6].isClicked()){
+					doorUnlocked = true;
+					s[1].getIL().setVisible(false);
+					s[1].setBackground(Color.WHITE);
+				}
+			}
+			
+			repaint();
 			
 		}
 	}
@@ -76,10 +102,23 @@ public class FirstWall extends JPanel {
 		if(bowlClicked)
 			list.remove(bowl);
 		
-		for(BufferedIm x: list){
-		g.drawImage(x.getBI(), 0, 0, null); 
+		if(keyClicked)
+			list.remove(key);
 		
-		}
+		if(couchClicked)
+			list.remove(couch);
+		
+		if(doorUnlocked){
+			list.remove(door);
+			list.add(openDoor);
+		}	
+		
+		if(switchClicked)
+			g.drawImage(black.getBI(), 0, 0, null); 
+		else{
+			for(BufferedIm x: list)
+				g.drawImage(x.getBI(), 0, 0, null); 		
+		}	
 		
 		
 		
