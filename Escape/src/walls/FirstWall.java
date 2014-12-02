@@ -8,6 +8,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 
+import escape.CaptionPanel;
 import escape.GamePanel;
 
 public class FirstWall extends WallPanel {
@@ -27,11 +28,15 @@ public class FirstWall extends WallPanel {
 	boolean keyClicked;
 	boolean doorUnlocked;
 	
+	CaptionPanel caption;
+	
 	
 	public FirstWall(WallBegin b, GamePanel gp) {
 		super();
 		this.b = b;
 		this.gp = gp;
+		caption = gp.caption;
+		
 		
 		setBackground(Color.RED);
 		
@@ -88,6 +93,8 @@ public class FirstWall extends WallPanel {
 					s[1].getIL().setVisible(false);
 					s[1].setBackground(Color.WHITE);
 				}
+				else
+					caption.l.setText("Needs a key.");
 			}
 			
 			repaint();

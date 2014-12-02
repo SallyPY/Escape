@@ -21,13 +21,15 @@ public class GamePanel extends JPanel{
 	ArrowPanel right;
 	ArrowPanel left;
 	
+	public CaptionPanel caption;
+	
 	public GamePanel() {
 		super();
 		setBackground(new Color(77,77,77));
 		setLayout(new BorderLayout());
 		
-		
-		add(new CaptionPanel(), BorderLayout.NORTH);
+		caption = new CaptionPanel();
+		add(caption, BorderLayout.NORTH);
 		
 		sp = new ImageSpacePanel(this);	//add the collection space at the bottom
 		add(sp, BorderLayout.SOUTH);

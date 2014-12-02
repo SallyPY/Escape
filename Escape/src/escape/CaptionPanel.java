@@ -1,11 +1,19 @@
 package escape;
 
-import javax.swing.JLabel;
+import java.awt.Color;
+import java.awt.Font;
 
-public class CaptionPanel {	
-	JLabel l;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+public class CaptionPanel extends JPanel{	
+	public JLabel l;
+	int size;
 	
 	public CaptionPanel(){
 		
+		l= new JLabel("How do I get out?");
+		l.setFont(new Font("Serif", Font.PLAIN, 17));
+		add(l);
 	}
 }

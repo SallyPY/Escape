@@ -8,12 +8,15 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 
+import escape.CaptionPanel;
 import escape.GamePanel;
 
 public class ThirdWall extends WallPanel{
 	
 	BufferedIm crowbarBack;
 	boolean crowbarClicked;
+	
+	CaptionPanel caption;
 
 	
 	
@@ -21,6 +24,7 @@ public class ThirdWall extends WallPanel{
 		super();
 		this.b = b;
 		this.gp = gp;
+		caption = gp.caption;
 		
 		back = new BufferedIm(new File("src/res/third/thirdWallBack.png"));
 		crowbarBack = new BufferedIm(new File("src/res/third/crowbarBack.png"));
@@ -38,10 +42,12 @@ public class ThirdWall extends WallPanel{
 			double x = e.getPoint().getX();
 			double y = e.getPoint().getY();
 			System.out.println(e.getPoint());
+			
 			if(x > 76 && x < 184 && y > 420 && y < 440 ){
 				crowbarClicked = true;
 				s[2].getIL().setVisible(true);
 				repaint();
+				caption.l.setText("I'm too weak to force my way out with this.");
 			}
 			
 			else if(x > 354 && x < 475 && y > 155 && y < 474){
@@ -49,7 +55,10 @@ public class ThirdWall extends WallPanel{
 					s[4].getIL().setVisible(true);
 					s[0].getIL().setVisible(false);
 					s[0].setBackground(Color.WHITE);
+					caption.l.setText("In case I get thirsty...");
 				}
+				else
+					caption.l.setText("The ceiling appears to be leaking.");
 			}
 			else if(x > 219 && x < 320 && y > 144 && y < 261){
 				switchClicked = !switchClicked;
@@ -60,6 +69,7 @@ public class ThirdWall extends WallPanel{
 				
 				b.fourth.switchClicked = !b.fourth.switchClicked;
 			
+				caption.l.setText("It's pitch black.");
 				
 				repaint();
 			}

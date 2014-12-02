@@ -8,6 +8,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 
+import escape.CaptionPanel;
 import escape.GamePanel;
 
 public class FourthWall extends WallPanel{
@@ -42,10 +43,13 @@ public class FourthWall extends WallPanel{
 	BufferedIm tree;
 	BufferedIm key;
 	
+	CaptionPanel caption;
+	
 	public FourthWall(WallBegin b, GamePanel gp) {
 		super();
 		this.b = b;
 		this.gp = gp;
+		caption = gp.caption;
 		
 		back = new BufferedIm(new File("src/res/fourth/fourthWallBack.png"));
 		blackLight= new BufferedIm(new File("src/res/fourth/fourthWallBlack.png"));
@@ -87,6 +91,7 @@ public class FourthWall extends WallPanel{
 					spotClicked =  true;
 					s[2].getIL().setVisible(false);
 				}
+				
 			}
 			
 			else if(x > 176 && x < 315 && y > 415 && y < 450 ){
@@ -96,6 +101,8 @@ public class FourthWall extends WallPanel{
 						s[4].getIL().setVisible(false);
 						s[4].setBackground(Color.WHITE);
 						s[0].getIL().setVisible(true);
+						if(seedInHole)
+							caption.l.setText("A giant beanstalk?");
 					}
 				}
 				
@@ -104,8 +111,13 @@ public class FourthWall extends WallPanel{
 						seedInHole =  true;
 						s[5].getIL().setVisible(false);
 						s[5].setBackground(Color.WHITE);
+						if(waterInHole)
+							caption.l.setText("A giant beanstalk?");
+					
 					}
 				}
+				else if(spotClicked)
+					caption.l.setText("This is dirt...");
 			}
 			
 
@@ -131,15 +143,20 @@ public class FourthWall extends WallPanel{
 					arrow[2] = thirdP;
 			}
 			
+			
 			else if(x > 380 && x < 435 && y > 420 && y < 454){
 				keyClicked = true;
 				s[6].getIL().setVisible(true);	
+				caption.l.setText("This fell out of the ceiling.");
 			}
+			
+			
 			
 			else if(x > 350 && x < 436 && y > 259 && y < 282)
 				if(openingUnhidden){
 					seedClicked = true;
 					s[5].getIL().setVisible(true);
+					caption.l.setText("These look like big seeds...");
 				}	
 		
 			repaint();
