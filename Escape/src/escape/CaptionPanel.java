@@ -13,7 +13,6 @@ public class CaptionPanel extends JPanel{
 	public CaptionPanel(){
 		
 		l= new JLabel("How do I get out?");
-		l.setFont(new Font("Serif", Font.PLAIN, 17));
 		add(l);
 	}
 }

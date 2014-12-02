@@ -92,6 +92,7 @@ public class FirstWall extends WallPanel {
 					doorUnlocked = true;
 					s[1].getIL().setVisible(false);
 					s[1].setBackground(Color.WHITE);
+					caption.l.setText("Freedom!");
 				}
 				else
 					caption.l.setText("Needs a key.");
