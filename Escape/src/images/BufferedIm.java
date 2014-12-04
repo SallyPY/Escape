@@ -11,11 +11,10 @@ public class BufferedIm  {
 	
 	BufferedImage bf;
 	
-	public BufferedIm(File x){
-		//super();
+	public BufferedIm(String x){
 		try 
 	    {                
-	      bf = ImageIO.read(x);
+	      bf = ImageIO.read(this.getClass().getClassLoader().getResourceAsStream(x));
 	    } 
 	    catch (IOException e) 
 	    { 

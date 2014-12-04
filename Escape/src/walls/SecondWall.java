@@ -26,10 +26,10 @@ public class SecondWall extends WallPanel{
 		caption = gp.caption;
 		
 		
-		back = new BufferedIm(new File("src/res/second/secWallBack.png"));
-		openLock = new BufferedIm(new File("src/res/second/openLock.png"));
+		back = new BufferedIm("res/second/secWallBack.png");
+		openLock = new BufferedIm("res/second/openLock.png");
 		
-		black = new BufferedIm(new File("src/res/compblack.png"));
+		black = new BufferedIm("res/compblack.png");
 		
 		list.add(back);
 		
@@ -62,6 +62,8 @@ public class SecondWall extends WallPanel{
 				else if(!lockClicked)
 					caption.l.setText("It looks like a safe.");
 			}
+			else if(x > 380 && x < 430 && y > 160 && y < 250)
+				caption.l.setText("What a pretty vase.");
 			repaint();
 		}
 	}

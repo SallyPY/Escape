@@ -26,9 +26,9 @@ public class ThirdWall extends WallPanel{
 		this.gp = gp;
 		caption = gp.caption;
 		
-		back = new BufferedIm(new File("src/res/third/thirdWallBack.png"));
-		crowbarBack = new BufferedIm(new File("src/res/third/crowbarBack.png"));
-		black = new BufferedIm(new File("src/res/third/thirdBlack.png"));
+		back = new BufferedIm("res/third/thirdWallBack.png");
+		crowbarBack = new BufferedIm("res/third/crowbarBack.png");
+		black = new BufferedIm("res/third/thirdBlack.png");
 		
 		list.add(back);
 		list.add(crowbarBack);

@@ -51,23 +51,23 @@ public class FourthWall extends WallPanel{
 		this.gp = gp;
 		caption = gp.caption;
 		
-		back = new BufferedIm(new File("src/res/fourth/fourthWallBack.png"));
-		blackLight= new BufferedIm(new File("src/res/fourth/fourthWallBlack.png"));
-		black = new BufferedIm(new File("src/res/compblack.png"));
+		back = new BufferedIm("res/fourth/fourthWallBack.png");
+		blackLight= new BufferedIm("res/fourth/fourthWallBlack.png");
+		black = new BufferedIm("res/compblack.png");
 
-		firstP = new BufferedIm(new File("src/res/fourth/firstP.png"));
-		secondP  = new BufferedIm(new File("src/res/fourth/secondP.png"));
-		thirdP = new BufferedIm(new File("src/res/fourth/thirdP.png"));
+		firstP = new BufferedIm("res/fourth/firstP.png");
+		secondP  = new BufferedIm("res/fourth/secondP.png");
+		thirdP = new BufferedIm("res/fourth/thirdP.png");
 		
-		firstPu  = new BufferedIm(new File("src/res/fourth/firstPu.png"));
-		secondPu = new BufferedIm(new File("src/res/fourth/secondPu.png"));
-		thirdPu = new BufferedIm(new File("src/res/fourth/thirdPu.png"));
+		firstPu  = new BufferedIm("res/fourth/firstPu.png");
+		secondPu = new BufferedIm("res/fourth/secondPu.png");
+		thirdPu = new BufferedIm("res/fourth/thirdPu.png");
 		
-		dirt = new BufferedIm(new File("src/res/fourth/dirt.png"));
-		opening = new BufferedIm(new File("src/res/fourth/seedOpening.png")); 
-		seeds = new BufferedIm(new File("src/res/fourth/seedsInOpening.png")); 
-		tree = new BufferedIm(new File("src/res/fourth/tree.png"));  
-		key = new BufferedIm(new File("src/res/fourth/keyOnFloor.png"));   
+		dirt = new BufferedIm("res/fourth/dirt.png");
+		opening = new BufferedIm("res/fourth/seedOpening.png"); 
+		seeds = new BufferedIm("res/fourth/seedsInOpening.png"); 
+		tree = new BufferedIm("res/fourth/tree.png");  
+		key = new BufferedIm("res/fourth/keyOnFloor.png");   
 		
 		arrow[0] = firstP;
 		arrow[1] = secondP;
@@ -186,10 +186,13 @@ public class FourthWall extends WallPanel{
 		if(allTrue(correctArrow)){
 			if(!list.contains(opening))
 				list.add(opening);
-			if(!seedClicked)
-				list.add(seeds);
+			if(!seedClicked){
+				if(!list.contains(seeds))
+					list.add(seeds);
+			}
 			else
 				list.remove(seeds);
+			
 		}
 		
 		if(seedInHole && waterInHole){

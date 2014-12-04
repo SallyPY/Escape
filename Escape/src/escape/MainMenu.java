@@ -8,6 +8,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,6 +22,7 @@ public class MainMenu extends JPanel implements ActionListener{
 	
 	private int fullSize = 600;
 	JFrame frame;
+	URL url;
 
 	
 	public MainMenu(JFrame j) {
@@ -54,12 +56,13 @@ public class MainMenu extends JPanel implements ActionListener{
 		startButton.addActionListener(this);
 		exitButton.addActionListener(this);
 		
+		url = getClass().getResource("/res/mainMenuBack.png");
 	}
 
     @Override
     protected void paintComponent(Graphics g) {
     	super.paintComponent(g);
-    	g.drawImage(new ImageIcon("src/res/mainMenuBack.png").getImage(),0,0,null);
+    	g.drawImage(new ImageIcon(url).getImage(),0,0,null);
     }
     
     private class ButtonPanel extends JPanel{ //panel holding the buttons

@@ -38,19 +38,19 @@ public class FirstWall extends WallPanel {
 		caption = gp.caption;
 		
 		
-		setBackground(Color.RED);
+	
 		
 		
-		back = new BufferedIm(new File("src/res/first/firstBack.png"));
-		black = new BufferedIm(new File("src/res/compblack.png"));
+		back = new BufferedIm("res/first/firstBack.png");
+		black = new BufferedIm("res/compblack.png");
 		
-		couch = new BufferedIm(new File("src/res/first/couch.png"));
-		door = new BufferedIm(new File("src/res/first/door.png"));
-		bowl = new BufferedIm(new File("src/res/first/bowlOnGround.png"));
-		openCouch = new BufferedIm(new File("src/res/first/openCouch.png"));
-		key = new BufferedIm(new File("src/res/first/keyOnCouch.png"));
+		couch = new BufferedIm("res/first/couch.png");
+		door = new BufferedIm("res/first/door.png");
+		bowl = new BufferedIm("res/first/bowlOnGround.png");
+		openCouch = new BufferedIm("res/first/openCouch.png");
+		key = new BufferedIm("res/first/keyOnCouch.png");
 		
-		openDoor =  new BufferedIm(new File("src/res/first/openDoor.png"));
+		openDoor =  new BufferedIm("res/first/openDoor.png");
 		
 		
 		list.add(back);
@@ -73,7 +73,7 @@ public class FirstWall extends WallPanel {
 			double y = e.getPoint().getY();
 			System.out.println(e.getPoint());
 			
-			if(x > 469 && x < 489 && y > 423 && y < 438 ){
+			if(x > 460 && x < 492 && y > 420 && y < 440 ){
 				bowlClicked = true;
 				s[0].getIL().setVisible(true);
 			}
@@ -122,7 +122,7 @@ public class FirstWall extends WallPanel {
 		}	
 		
 		if(switchClicked)
-			g.drawImage(black.getBI(), 0, 0, null); 
+			g.drawImage(black.getBI(), 0, 0, this); 
 		else{
 			for(BufferedIm x: list)
 				g.drawImage(x.getBI(), 0, 0, null); 		
