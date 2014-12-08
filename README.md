@@ -15,3 +15,7 @@ Removed metadata folder with a .gitignore file
 12/1
 Got a lot done over Thanksgiving break. You can actually win the game!
 
+12/4
+Had a problem with exporting images into a JAR file. Finally fixed. Now for sound effects.
+
+
