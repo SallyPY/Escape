@@ -12,7 +12,6 @@ public class EscapeGame extends JFrame{	//sets frame
 		setContentPane(new MainMenu(this));
 		pack();
 		setVisible(true);
-		
 		}
 	
 	public static void main (String[] args) {

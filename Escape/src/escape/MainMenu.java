@@ -23,7 +23,6 @@ public class MainMenu extends JPanel implements ActionListener{
 	private int fullSize = 600;
 	JFrame frame;
 	URL url;
-
 	
 	public MainMenu(JFrame j) {
 		super();
@@ -36,7 +35,6 @@ public class MainMenu extends JPanel implements ActionListener{
 		setLayout(gl);
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
-		
 		
 		c.gridx = 0;
 		c.gridy = 0;	
@@ -82,10 +80,8 @@ public class MainMenu extends JPanel implements ActionListener{
     	
     		exitButton = new JButton("Exit");
     		exitButton.setFocusable(false);
-    		add(exitButton,c);
-    		
+    		add(exitButton,c);	
     	}
-    
     }
 
 	@Override
@@ -93,14 +89,11 @@ public class MainMenu extends JPanel implements ActionListener{
 		if (e.getSource().equals(exitButton)) {
 			System.exit(0);
 		}
+		
 		if (e.getSource().equals(startButton)) 
 		setVisible(false);
 		frame.setContentPane(new GamePanel()); //begins a GamePanel
 		frame.getContentPane().remove(this);	
 		
-	}
-    
-  
-    
-    
+	}    
 }

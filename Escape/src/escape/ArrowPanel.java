@@ -21,7 +21,6 @@ public class ArrowPanel extends JPanel implements ActionListener{
 	
 	BasicArrowButton arrow;
 	WallBegin parent;
-	
 	CardLayout cl;
 
 	public ArrowPanel(String s, WallBegin w) {
@@ -53,9 +52,7 @@ public class ArrowPanel extends JPanel implements ActionListener{
 			arrow = new BasicArrowButton(BasicArrowButton.NORTH);	/*produces a down-facing arrow*/
 			arrow.addActionListener(this);
 			add(arrow,c);
-		
-		}
-		
+		}	
 	}
 	
 	/*
@@ -68,11 +65,6 @@ public class ArrowPanel extends JPanel implements ActionListener{
 				cl.next(parent);
 			else
 				cl.previous(parent);
-		}
-			
-		
-		
-		
+		}	
 	}
-
 }

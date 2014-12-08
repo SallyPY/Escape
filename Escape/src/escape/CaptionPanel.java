@@ -11,7 +11,6 @@ public class CaptionPanel extends JPanel{
 	int size;
 	
 	public CaptionPanel(){
-		
 		l= new JLabel("How do I get out?");
 		add(l);
 	}

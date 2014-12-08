@@ -24,6 +24,7 @@ public class GamePanel extends JPanel{
 	public CaptionPanel caption;
 	
 	public GamePanel() {
+		
 		super();
 		setBackground(new Color(77,77,77));
 		setLayout(new BorderLayout());
@@ -42,16 +43,9 @@ public class GamePanel extends JPanel{
 		
 		left = new ArrowPanel("left", w);	//place left arrow to the left
 		add(left, BorderLayout.WEST);
-		
 	}
 	
-	public ImageSpacePanel getImageSpacePanel(){
-		return sp;
-		
-	}
-		
-		
-		
-	}
+	public ImageSpacePanel getImageSpacePanel(){return sp;}	
+}
 	
 

@@ -9,14 +9,13 @@ import javax.swing.JPanel;
 /*
  * This InstructionPanel displays and formats the instructions of the game
  */
-
-
 public class InstructionPanel extends JPanel{
+	
 	JLabel in;
+	
 	public InstructionPanel(){
 		super();
 		setLayout(new BorderLayout());
-
 		setBackground(new Color(0, 0, 0, 125));
 	
 		in = new JLabel("<html><center>Yesterday, you had a bit too much to drink.<br>"
@@ -27,6 +26,4 @@ public class InstructionPanel extends JPanel{
 		
 		add(in,BorderLayout.CENTER);
 	}
-
-
 }
