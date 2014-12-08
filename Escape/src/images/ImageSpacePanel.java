@@ -22,8 +22,6 @@ public class ImageSpacePanel extends JPanel{
 		this.gp = gp;
 	  
 		setLayout(new GridLayout(2,4));
-		setBackground(Color.BLUE);
-
 
 		panelHolder = new ImagePanel[8];    
 
@@ -32,19 +30,9 @@ public class ImageSpacePanel extends JPanel{
 		      panelHolder[m].setPreferredSize(new Dimension(50,60));
 		      panelHolder[m].setBackground(Color.WHITE);
 		      panelHolder[m].setBorder(BorderFactory.createLineBorder(new Color(0,0,0,125)));
-		      add(panelHolder[m]);
-		   
+		      add(panelHolder[m]);  
 		}
-		
-		
-	
 	}
 	
-	public ImagePanel[] getPanelHolder(){
-		return panelHolder;
-	}
-	
-	
-	
-
+	public ImagePanel[] getPanelHolder(){return panelHolder;}
 }

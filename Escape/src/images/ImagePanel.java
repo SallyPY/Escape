@@ -12,14 +12,11 @@ import javax.swing.JPanel;
  */
 
 public class ImagePanel extends JPanel{
-	
-	boolean found;
-	
+
 	ImageIcon image;
 	ImageLabel x;
 	ImageSpacePanel space;
 	
-
 	public ImagePanel(int m,ImageSpacePanel space) {
 		super();
 		setLayout(new GridBagLayout());
@@ -32,12 +29,8 @@ public class ImagePanel extends JPanel{
 					x.setVisible(false);
 					add(x);
 					break;
-
 				}
 				catch (IOException e){} 
-				
-
-			
 			
 			case 1:
 				try{
@@ -46,7 +39,6 @@ public class ImagePanel extends JPanel{
 					x.setVisible(false);
 					add(x);
 					break;
-
 				}
 				catch (IOException e){} 
 				
@@ -94,24 +86,10 @@ public class ImagePanel extends JPanel{
 				try{
 					x = new ImageLabel((new ImageIcon(ImageIO.read(getClass().getResourceAsStream("/res/finalKey.png")))),space, this);
 				}
-				catch (IOException e){} 
-					
-				
+				catch (IOException e){} 			
 		}
-		found = false;
-		 
-	
-	}
-	public boolean isClicked(){
-		return x.clicked;
 	}
 	
-	public ImageLabel getIL(){
-		return x;
-	}
-
-		
-		
-	
-	
+	public boolean isClicked(){return x.clicked;}
+	public ImageLabel getIL(){return x;}	
 }

@@ -18,13 +18,12 @@ public class ImageLabel extends JLabel{
 		this.ip = ip;
 		clicked = false;
 		addMouseListener(new MyMouseListener());
-	
 	}
 	
 	class MyMouseListener extends MouseAdapter{
 		public void mouseClicked(MouseEvent e){
 			for(int i = 0; i < 8; i++)
-				if(isp.panelHolder[i].isClicked()==true){
+				if(isp.panelHolder[i].isClicked()==true && isp.panelHolder[i] != ip){
 					isp.panelHolder[i].setBackground(Color.WHITE);
 					isp.panelHolder[i].getIL().clicked = false;
 				}
@@ -37,7 +36,4 @@ public class ImageLabel extends JLabel{
 				 ip.setBackground(Color.WHITE);
 		}
 	}
-	
-	
-
 }
