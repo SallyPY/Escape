@@ -38,12 +38,8 @@ public class WallBegin extends WallPanel {
 		fourth = new FourthWall(this, gp);
 		add(fourth, "fourth");
 		
-		
 		cl.show(this, "first");
 	}
 
-	public CardLayout getCl() {
-		return cl;
-	}
-
+	public CardLayout getCl() {return cl;}
 }

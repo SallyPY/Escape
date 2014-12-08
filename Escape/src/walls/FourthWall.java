@@ -10,6 +10,7 @@ import java.io.File;
 
 import escape.CaptionPanel;
 import escape.GamePanel;
+import escape.Sound;
 
 public class FourthWall extends WallPanel{
 	
@@ -25,9 +26,8 @@ public class FourthWall extends WallPanel{
 	boolean waterInHole;
 	boolean keyClicked;
 	
-	boolean[] correctArrow = new boolean[3];
-	BufferedIm [] arrow = new BufferedIm[3];
-	
+	boolean[] correctflower = new boolean[3];
+	BufferedIm [] flower = new BufferedIm[3];
 	
 	BufferedIm firstP;
 	BufferedIm secondP;
@@ -38,12 +38,16 @@ public class FourthWall extends WallPanel{
 	BufferedIm thirdPu;
 	
 	BufferedIm opening;
-	BufferedIm seeds;
+	BufferedIm seedsAndOpening;
 	
 	BufferedIm tree;
 	BufferedIm key;
 	
 	CaptionPanel caption;
+	
+	boolean flowers;
+	
+	Sound floorboard;
 	
 	public FourthWall(WallBegin b, GamePanel gp) {
 		super();
@@ -53,7 +57,7 @@ public class FourthWall extends WallPanel{
 		
 		back = new BufferedIm("res/fourth/fourthWallBack.png");
 		blackLight= new BufferedIm("res/fourth/fourthWallBlack.png");
-		black = new BufferedIm("res/compblack.png");
+		black = new BufferedIm("res/dimWall.png");
 
 		firstP = new BufferedIm("res/fourth/firstP.png");
 		secondP  = new BufferedIm("res/fourth/secondP.png");
@@ -65,14 +69,19 @@ public class FourthWall extends WallPanel{
 		
 		dirt = new BufferedIm("res/fourth/dirt.png");
 		opening = new BufferedIm("res/fourth/seedOpening.png"); 
-		seeds = new BufferedIm("res/fourth/seedsInOpening.png"); 
+		seedsAndOpening = new BufferedIm("res/fourth/seedsInOpening.png"); 
 		tree = new BufferedIm("res/fourth/tree.png");  
 		key = new BufferedIm("res/fourth/keyOnFloor.png");   
 		
-		arrow[0] = firstP;
-		arrow[1] = secondP;
-		arrow[2] = thirdP;
-		correctArrow[0] = true;
+		floorboard = new Sound("/res/sfx.wav");
+		
+		flowers = true;
+	
+		
+		flower[0] = firstP;
+		flower[1] = secondP;
+		flower[2] = thirdP;
+		correctflower[0] = true;
 		
 		list.add(back);
 		
@@ -84,84 +93,106 @@ public class FourthWall extends WallPanel{
 			s = gp.getImageSpacePanel().getPanelHolder();
 			double x = e.getPoint().getX();
 			double y = e.getPoint().getY();
-			System.out.println(e.getPoint());
 			
-			if(x > 297 && x < 315 && y > 418 && y < 450 ){
+			if(x > 297 && x < 330 && y > 415 && y < 4550 && !spotClicked){
 				if(s[2].isClicked()){
 					spotClicked =  true;
+					list.add(dirt);
 					s[2].getIL().setVisible(false);
+					s[2].setBackground(Color.WHITE);
+					floorboard.start();
+					caption.l.setText("The floorboard has been removed.");
 				}
 				
 			}
 			
-			else if(x > 176 && x < 315 && y > 415 && y < 450 ){
+			else if(x > 167 && x < 315 && y > 415 && y < 450 ){
 				if(s[4].isClicked()){
 					if(spotClicked){
 						waterInHole =  true;
 						s[4].getIL().setVisible(false);
 						s[4].setBackground(Color.WHITE);
 						s[0].getIL().setVisible(true);
-						if(seedInHole)
+						sound.start();
+						if(seedInHole){
+							list.add(tree);
+							list.add(key);
 							caption.l.setText("A giant beanstalk?");
+						}
 					}
 				}
-				
+
 				else if(s[5].isClicked()){
 					if(spotClicked){
 						seedInHole =  true;
 						s[5].getIL().setVisible(false);
 						s[5].setBackground(Color.WHITE);
-						if(waterInHole)
+						sound.start();
+						if(waterInHole){
+							list.add(tree);
+							list.add(key);
 							caption.l.setText("A giant beanstalk?");
-					
+						}
 					}
 				}
 				else if(spotClicked)
 					caption.l.setText("This is dirt...");
 			}
-			
 
 			else if(x > 322 && x < 358 && y > 310 && y < 418){
-				correctArrow[0] = !correctArrow[0];
-				if(arrow[0].equals(firstP))
-					arrow[0] = firstPu;
+				correctflower[0] = !correctflower[0];
+				if(flower[0].equals(firstP))
+					flower[0] = firstPu;
 				else 
-					arrow[0] = firstP;
+					flower[0] = firstP;
 			}
+			
 			else if(x > 372 && x < 410 && y > 310 && y < 418){
-				correctArrow[1] = !correctArrow[1];
-				if(arrow[1].equals(secondP))
-					arrow[1] = secondPu;
+				correctflower[1] = !correctflower[1];
+				if(flower[1].equals(secondP))
+					flower[1] = secondPu;
 				else 
-					arrow[1] = secondP;
+					flower[1] = secondP;
 			}
+			
 			else if(x > 425 && x < 460 && y > 310 && y < 418){
-				correctArrow[2] = !correctArrow[2];
-				if(arrow[2].equals(thirdP))
-					arrow[2] = thirdPu;
+				correctflower[2] = !correctflower[2];
+				if(flower[2].equals(thirdP))
+					flower[2] = thirdPu;
 				else 
-					arrow[2] = thirdP;
+					flower[2] = thirdP;
 			}
 			
-			
-			else if(x > 380 && x < 435 && y > 420 && y < 454){
+			else if(x > 380 && x < 435 && y > 420 && y < 454 && !keyClicked){
 				keyClicked = true;
+				list.remove(key);
 				s[6].getIL().setVisible(true);	
+				sound.start();
 				caption.l.setText("This fell out of the ceiling.");
 			}
-			
-			
-			
-			else if(x > 350 && x < 436 && y > 259 && y < 282)
+	
+			else if(x > 350 && x < 436 && y > 259 && y < 279 && !seedClicked){
 				if(openingUnhidden){
 					seedClicked = true;
 					s[5].getIL().setVisible(true);
 					caption.l.setText("These look like big seeds...");
-				}	
-		
-			repaint();
-		}
+					list.remove(seedsAndOpening);
+					list.add(opening);
+					sound.start();
+				
+				}
+			}
 			
+			if(allTrue(correctflower) && flowers){
+				flowers = false;
+				openingUnhidden = true;
+				list.add(seedsAndOpening);
+			}
+			
+		
+			
+			repaint();
+		}		
 	}
 	
 	public boolean allTrue(boolean[] a){
@@ -170,57 +201,40 @@ public class FourthWall extends WallPanel{
 			if(a[i]==false)
 				return false;
 		}
-		openingUnhidden = true;
 		return true;
 	}
-	
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);	
 		
-		if(spotClicked){
-			if(!list.contains(dirt))
-				list.add(dirt);
-		}
-		
-		if(allTrue(correctArrow)){
-			if(!list.contains(opening))
-				list.add(opening);
-			if(!seedClicked){
-				if(!list.contains(seeds))
-					list.add(seeds);
-			}
-			else
-				list.remove(seeds);
-			
-		}
-		
-		if(seedInHole && waterInHole){
-			if(!list.contains(tree))
-				list.add(tree);
-			if(!list.contains(key))
-				list.add(key);
-		}
-		
-		if(keyClicked)
-			list.remove(key);
-		
 		if(switchClicked){
-			if(unhidden)
-				g.drawImage(blackLight.getBI(), 0, 0, null); 
-			else
+			if(unhidden){
+			for(BufferedIm x: list)
+				g.drawImage(x.getBI(), 0, 0, null); 
+			
+				
+			for(BufferedIm x: flower)
+				g.drawImage(x.getBI(), 0, 0, null); 
+			
+			g.drawImage(black.getBI(), 0, 0, null); 
+			g.drawImage(blackLight.getBI(), 0, 0, null); 
+			
+			}
+			else{
+			for(BufferedIm x: list)
+				g.drawImage(x.getBI(), 0, 0, null); 
+			for(BufferedIm x: flower)
+				g.drawImage(x.getBI(), 0, 0, null); 
+			
 				g.drawImage(black.getBI(), 0, 0, null); 
+			}
 		}
 		
 		else{
 			for(BufferedIm x: list)
 				g.drawImage(x.getBI(), 0, 0, null); 
-			for(BufferedIm x: arrow)
+			for(BufferedIm x: flower)
 				g.drawImage(x.getBI(), 0, 0, null); 
-		}
-		
-		
+		}	
 	}
-
-
 }

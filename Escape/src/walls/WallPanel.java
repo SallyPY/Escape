@@ -8,6 +8,7 @@ import java.util.LinkedList;
 import javax.swing.JPanel;
 
 import escape.GamePanel;
+import escape.Sound;
 
 /*
  * Abstract class that helps navigation using the arrows in ArrowPanel
@@ -15,6 +16,7 @@ import escape.GamePanel;
 public abstract class WallPanel extends JPanel{
 	
 	GamePanel gp;
+	
 	WallBegin b;
 
 	BufferedIm back;
@@ -22,9 +24,13 @@ public abstract class WallPanel extends JPanel{
 	
 	LinkedList<BufferedIm> list = new LinkedList<BufferedIm>();
 	
+	Sound sound = new Sound("/res/blip.wav");
+	
 	boolean switchClicked;
 	
 	ImagePanel[] s;
+	
+	
 	
 
 }

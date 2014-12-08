@@ -14,12 +14,13 @@ import escape.GamePanel;
 public class ThirdWall extends WallPanel{
 	
 	BufferedIm crowbarBack;
+	BufferedIm lightOn;
+	BufferedIm lightOff;
+	
 	boolean crowbarClicked;
 	
 	CaptionPanel caption;
 
-	
-	
 	public ThirdWall(WallBegin b, GamePanel gp) {
 		super();
 		this.b = b;
@@ -28,10 +29,13 @@ public class ThirdWall extends WallPanel{
 		
 		back = new BufferedIm("res/third/thirdWallBack.png");
 		crowbarBack = new BufferedIm("res/third/crowbarBack.png");
-		black = new BufferedIm("res/third/thirdBlack.png");
+		black = new BufferedIm("res/dimWall.png");
+		lightOn = new BufferedIm("res/third/lightOn.png");
+		lightOff  = new BufferedIm("res/third/lightOff.png");
 		
 		list.add(back);
 		list.add(crowbarBack);
+		list.add(lightOn);
 		
 		addMouseListener(new MyMouseListener());
 	}
@@ -41,12 +45,12 @@ public class ThirdWall extends WallPanel{
 			s = gp.getImageSpacePanel().getPanelHolder();
 			double x = e.getPoint().getX();
 			double y = e.getPoint().getY();
-			System.out.println(e.getPoint());
 			
-			if(x > 76 && x < 184 && y > 420 && y < 440 ){
+			if(x > 76 && x < 184 && y > 420 && y < 440 && !crowbarClicked){
 				crowbarClicked = true;
+				list.remove(crowbarBack);
 				s[2].getIL().setVisible(true);
-				repaint();
+				sound.start();
 				caption.l.setText("I'm too weak to force my way out with this.");
 			}
 			
@@ -55,11 +59,14 @@ public class ThirdWall extends WallPanel{
 					s[4].getIL().setVisible(true);
 					s[0].getIL().setVisible(false);
 					s[0].setBackground(Color.WHITE);
+					sound.start();
 					caption.l.setText("In case I get thirsty...");
 				}
+				
 				else
 					caption.l.setText("The ceiling appears to be leaking.");
 			}
+			
 			else if(x > 219 && x < 320 && y > 144 && y < 261){
 				switchClicked = !switchClicked;
 				
@@ -69,29 +76,35 @@ public class ThirdWall extends WallPanel{
 				
 				b.fourth.switchClicked = !b.fourth.switchClicked;
 			
-				caption.l.setText("It's pitch black.");
+				if(switchClicked){
+					caption.l.setText("It's dark.");
+					list.remove(lightOn);
+					list.add(lightOff);
+					sound.start();
+				}
+				else{
+					sound.start();
+					list.remove(lightOff);
+					list.add(lightOn);
 				
-				repaint();
-			}
+					caption.l.setText("How do I get out?");
+				}
+			}	
 			
+		repaint();
 		}
-			
 	}
 	
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);	
-		
-		if(crowbarClicked)
-			list.remove(crowbarBack);
-		
-		if(switchClicked)
-			g.drawImage(black.getBI(), 0, 0, null); 
-		else{
+
+		if(switchClicked){
 			for(BufferedIm x: list)
-				g.drawImage(x.getBI(), 0, 0, null); 		
-		}	
+				g.drawImage(x.getBI(), 0, 0, null); 
+			g.drawImage(black.getBI(), 0, 0, null); 
+		}
+		else
+			for(BufferedIm x: list)
+				g.drawImage(x.getBI(), 0, 0, null); 
 	}
-	
-
-
 }
