@@ -5,7 +5,9 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
+/**
+ * The CaptionPanel gives the current status when the user clicks around.
+ */
 public class CaptionPanel extends JPanel{	
 	public JLabel l;
 	int size;
@@ -14,4 +16,6 @@ public class CaptionPanel extends JPanel{
 		l= new JLabel("How do I get out?");
 		add(l);
 	}
+	
+	public JLabel getText(){return l;}
 }

@@ -7,17 +7,18 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
-/*
- * Panel that specifies what image goes into each space on the grid. Each item has a specific location
+/**
+ * Panel that specifies what image goes into each space on the ImageSpacePanel grid. Each item has a specific location. 
+ * This image is incorporated into an ImageLabel object first.
  */
 
 public class ImagePanel extends JPanel{
 
 	ImageIcon image;
 	ImageLabel x;
-	ImageSpacePanel space;
+	ImageInventoryPanel space;
 	
-	public ImagePanel(int m,ImageSpacePanel space) {
+	public ImagePanel(int m,ImageInventoryPanel space) {
 		super();
 		setLayout(new GridBagLayout());
 		this.space = space;
@@ -86,7 +87,7 @@ public class ImagePanel extends JPanel{
 				try{
 					x = new ImageLabel((new ImageIcon(ImageIO.read(getClass().getResourceAsStream("/res/finalKey.png")))),space, this);
 				}
-				catch (IOException e){} 			
+				catch (IOException e){} 		
 		}
 	}
 	

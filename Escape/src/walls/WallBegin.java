@@ -1,12 +1,12 @@
 package walls;
 
-import images.ImageSpacePanel;
+import images.ImageInventoryPanel;
 
 import java.awt.CardLayout;
 import java.awt.Color;
 
 import escape.GamePanel;
-/*
+/**
  * Flipping through the four walls occurs here
  */
 public class WallBegin extends WallPanel {
@@ -18,7 +18,7 @@ public class WallBegin extends WallPanel {
     FourthWall fourth;
     GamePanel gp;
 	
-	public WallBegin(GamePanel g, ImageSpacePanel sp){
+	public WallBegin(GamePanel g, ImageInventoryPanel sp){
 		super();
 		gp = g;
 		setBackground(Color.BLACK);

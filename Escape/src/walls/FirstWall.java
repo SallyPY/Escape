@@ -6,12 +6,14 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.IOException;
 
-import escape.CaptionPanel;
+import javax.swing.JLabel;
+
 import escape.GamePanel;
 import escape.Sound;
-
+/**
+ * The FirstWall class shows the first wall of the room.
+ */
 public class FirstWall extends WallPanel {
 	
 	BufferedIm couch;
@@ -27,7 +29,7 @@ public class FirstWall extends WallPanel {
 	boolean keyClicked;
 	boolean doorUnlocked;
 	
-	CaptionPanel caption;
+	JLabel caption;
 	
 	Sound unlocking;
 	Sound rattle;
@@ -38,10 +40,9 @@ public class FirstWall extends WallPanel {
 		super();
 		this.b = b;
 		this.gp = gp;
-		caption = gp.caption;
+		caption = gp.caption.getText();
 		
-		
-		
+		//creating new BufferedIm objects
 		back = new BufferedIm("res/first/firstBack.png");
 		black = new BufferedIm("res/dimWall.png");
 		
@@ -53,10 +54,11 @@ public class FirstWall extends WallPanel {
 		
 		openDoor =  new BufferedIm("res/first/openDoor.png");
 		
-		unlocking = new Sound("/res/sfx.wav");
-		win = new Sound("/res/win.wav");
-		rattle = new Sound("/res/rattle.wav");
+		unlocking = new Sound("/res/sound/thump.wav");
+		win = new Sound("/res/sound/win.wav");
+		rattle = new Sound("/res/sound/rattle.wav");
 		
+		//add the images to a linked list of BufferedIm objects
 		list.add(back);
 		list.add(bowl);
 		list.add(door);
@@ -68,38 +70,47 @@ public class FirstWall extends WallPanel {
 	}
 	
 	class MyMouseListener extends MouseAdapter{
+		/*
+		 * This method performs actions(add and remove from linked list, start sound effect, show a comment, etc.)
+		 * based on the region the user clicks on and which item is currently selected for in the inventory.
+		 */
 		public void mouseClicked(MouseEvent e){
-			
+
 			s = gp.getImageSpacePanel().getPanelHolder();
 			double x = e.getPoint().getX();
 			double y = e.getPoint().getY();
 	
-			
+			//if the bowl is clicked, the bowl is removed from the wall and appears in the inventory
 			if(x > 460 && x < 492 && y > 420 && y < 440 && !bowlClicked){
 				bowlClicked = true;
 				list.remove(bowl);
 				s[0].getIL().setVisible(true);
-				caption.l.setText("An empty bowl...");
+				caption.setText("An empty bowl...");
 				sound.start();
 				
 			}
+			//if the couch is clicked and it is closed, the closed couch is removed, revealing an open couch
+			//this can only happen once.
+			else if(x > 260 && x < 369 && y > 375 && y < 416 && !couchClicked){
+				couchClicked = true;		
+				list.remove(couch);
+			}
 			
+			//if couch is open and the key is clicked, the key appears in the inventory and the couch is closed
+			//this can only happen once
 			else if(x > 323 && x < 348 && y > 390 && y < 410 && couchClicked && !keyClicked){
 				keyClicked = true;
 				list.remove(key);
 				list.remove(openCouch);
 				list.add(couch);
 				s[1].getIL().setVisible(true);
-				caption.l.setText("What is this?");
+				caption.setText("What is this?");
 				sound.start();
 
 			}
 			
-			else if(x > 260 && x < 369 && y > 375 && y < 416 && !couchClicked){
-				couchClicked = true;		
-				list.remove(couch);
-			}
-			
+			//if the final key in the inventory is clicked and the door knob is clicked, the door opens and the user wins
+			//the key disappears
 			else if(x > 175 && x < 205 && y > 259 && y < 295){
 				if(s[6].isClicked()){
 					doorUnlocked = true;
@@ -109,12 +120,12 @@ public class FirstWall extends WallPanel {
 					s[6].setBackground(Color.WHITE);
 					unlocking.start();
 					win.start();
-					caption.l.setText("Freedom!");
+					caption.setText("Freedom!");
 				}
-				
+				//else the door remains locked
 				else{
 					rattle.start();
-					caption.l.setText("Needs a key.");
+					caption.setText("Needs a key.");
 				}
 			}		
 			repaint();	
@@ -124,7 +135,7 @@ public class FirstWall extends WallPanel {
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);
 		
-		if(switchClicked){
+		if(switchClicked){	//if the light is turned off from the third wall, the black image is drawn over the rest of the wall images
 			for(BufferedIm x: list)
 				g.drawImage(x.getBI(), 0, 0, null); 
 			g.drawImage(black.getBI(), 0, 0, null); 

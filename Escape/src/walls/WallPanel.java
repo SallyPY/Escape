@@ -10,8 +10,8 @@ import javax.swing.JPanel;
 import escape.GamePanel;
 import escape.Sound;
 
-/*
- * Abstract class that helps navigation using the arrows in ArrowPanel
+/**
+ * The WallPanel class helps navigation using the arrows in ArrowPanel and passes down common variables and methods needed in all four walls
  */
 public abstract class WallPanel extends JPanel{
 	
@@ -24,11 +24,16 @@ public abstract class WallPanel extends JPanel{
 	
 	LinkedList<BufferedIm> list = new LinkedList<BufferedIm>();
 	
-	Sound sound = new Sound("/res/blip.wav");
+	Sound sound = new Sound("/res/sound/blip.wav");
 	
 	boolean switchClicked;
 	
 	ImagePanel[] s;
+	
+	void switchLight(){
+		switchClicked = !switchClicked;
+	}
+	
 	
 	
 	

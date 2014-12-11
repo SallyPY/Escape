@@ -9,15 +9,15 @@ import javax.swing.JPanel;
 
 import escape.GamePanel;
 
-/*
+/**
  * This panel can hold a total of 8 items the user can collect and use to escape the room
  */
-public class ImageSpacePanel extends JPanel{
+public class ImageInventoryPanel extends JPanel{
 	public ImagePanel[] panelHolder;
 	GamePanel gp;
 
 
-	public ImageSpacePanel(GamePanel gp) {
+	public ImageInventoryPanel(GamePanel gp) {
 		super();
 		this.gp = gp;
 	  
@@ -25,6 +25,7 @@ public class ImageSpacePanel extends JPanel{
 
 		panelHolder = new ImagePanel[8];    
 
+		//sets the 8 individual ImagePanels up and organizes them into the ImageSpacePanel
 		for(int m = 0; m < 8; m++) {
 		      panelHolder[m] = new ImagePanel(m, this);
 		      panelHolder[m].setPreferredSize(new Dimension(50,60));

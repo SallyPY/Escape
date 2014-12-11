@@ -6,12 +6,14 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
 
-import escape.CaptionPanel;
+import javax.swing.JLabel;
+
 import escape.GamePanel;
 import escape.Sound;
-
+/**
+ * The FourthWall class shows the fourth wall of the room.
+ */
 public class FourthWall extends WallPanel{
 	
 	BufferedIm dirt;
@@ -43,7 +45,7 @@ public class FourthWall extends WallPanel{
 	BufferedIm tree;
 	BufferedIm key;
 	
-	CaptionPanel caption;
+	JLabel caption;
 	
 	boolean flowers;
 	
@@ -53,7 +55,7 @@ public class FourthWall extends WallPanel{
 		super();
 		this.b = b;
 		this.gp = gp;
-		caption = gp.caption;
+		caption = gp.caption.getText();
 		
 		back = new BufferedIm("res/fourth/fourthWallBack.png");
 		blackLight= new BufferedIm("res/fourth/fourthWallBlack.png");
@@ -73,7 +75,7 @@ public class FourthWall extends WallPanel{
 		tree = new BufferedIm("res/fourth/tree.png");  
 		key = new BufferedIm("res/fourth/keyOnFloor.png");   
 		
-		floorboard = new Sound("/res/sfx.wav");
+		floorboard = new Sound("/res/sound/thump.wav");
 		
 		flowers = true;
 	
@@ -94,59 +96,70 @@ public class FourthWall extends WallPanel{
 			double x = e.getPoint().getX();
 			double y = e.getPoint().getY();
 			
+			//if the edge of the floorboard is clicked
 			if(x > 297 && x < 330 && y > 415 && y < 4550 && !spotClicked){
+				
+				//if the crowbar is selected for, the floorboard is removed and the crowbar disappears from the inventory
+				//This can only happen once.
 				if(s[2].isClicked()){
 					spotClicked =  true;
 					list.add(dirt);
 					s[2].getIL().setVisible(false);
 					s[2].setBackground(Color.WHITE);
 					floorboard.start();
-					caption.l.setText("The floorboard has been removed.");
+					caption.setText("The floorboard has been removed.");
 				}
 				
 			}
-			
+			//if the floorboard area is clicked
 			else if(x > 167 && x < 315 && y > 415 && y < 450 ){
+				//if the bowl with water is selected for
 				if(s[4].isClicked()){
+					//if the dirt is shown, the bowl with water disappears from the inventory and the empty bowl reappears
 					if(spotClicked){
 						waterInHole =  true;
 						s[4].getIL().setVisible(false);
 						s[4].setBackground(Color.WHITE);
 						s[0].getIL().setVisible(true);
 						sound.start();
+						//if the seeds have already been placed in the dirt, the tree and key appear on screen
 						if(seedInHole){
 							list.add(tree);
 							list.add(key);
-							caption.l.setText("A giant beanstalk?");
+							caption.setText("A giant beanstalk?");
 						}
 					}
 				}
-
+				//else if the seeds are selected for, they disappear from the inventory
 				else if(s[5].isClicked()){
 					if(spotClicked){
 						seedInHole =  true;
 						s[5].getIL().setVisible(false);
 						s[5].setBackground(Color.WHITE);
 						sound.start();
+						//if the water has already been poured in, the tree and key appear on screen
 						if(waterInHole){
 							list.add(tree);
 							list.add(key);
-							caption.l.setText("A giant beanstalk?");
+							caption.setText("A giant beanstalk?");
 						}
 					}
 				}
 				else if(spotClicked)
-					caption.l.setText("This is dirt...");
+					caption.setText("This is dirt...");
 			}
-
+			
+			//else if the first flower is clicked, the boolean value at pos 0 in  correctflower is switched.
 			else if(x > 322 && x < 358 && y > 310 && y < 418){
 				correctflower[0] = !correctflower[0];
+				//the flower colors are swapped
 				if(flower[0].equals(firstP))
 					flower[0] = firstPu;
 				else 
 					flower[0] = firstP;
 			}
 			
+			//if the secon flower is clicked, the boolean value at pos 1 in  correctflower is switched.
 			else if(x > 372 && x < 410 && y > 310 && y < 418){
 				correctflower[1] = !correctflower[1];
 				if(flower[1].equals(secondP))
@@ -154,7 +167,7 @@ public class FourthWall extends WallPanel{
 				else 
 					flower[1] = secondP;
 			}
-			
+			//else if the third flower is clicked, the boolean value at pos 2 in  correctflower is switched.
 			else if(x > 425 && x < 460 && y > 310 && y < 418){
 				correctflower[2] = !correctflower[2];
 				if(flower[2].equals(thirdP))
@@ -163,38 +176,44 @@ public class FourthWall extends WallPanel{
 					flower[2] = thirdP;
 			}
 			
-			else if(x > 380 && x < 435 && y > 420 && y < 454 && !keyClicked){
+			//else if the key on screen is clicked, the key appears in the inventory
+			//this can only happen once
+			else if(x > 380 && x < 435 && y > 420 && y < 454 && waterInHole && seedInHole && !keyClicked){
 				keyClicked = true;
 				list.remove(key);
 				s[6].getIL().setVisible(true);	
 				sound.start();
-				caption.l.setText("This fell out of the ceiling.");
+				caption.setText("This fell out of the ceiling.");
 			}
-	
+			
+			//else if the hidden opening area is clicked and the seeds haven't been taken
 			else if(x > 350 && x < 436 && y > 259 && y < 279 && !seedClicked){
+				//if the opening is shown, the seeds appear in the inventory and the seeds are removed from the screen
+				//this can only happen once
 				if(openingUnhidden){
 					seedClicked = true;
 					s[5].getIL().setVisible(true);
-					caption.l.setText("These look like big seeds...");
+					caption.setText("These look like big seeds...");
 					list.remove(seedsAndOpening);
 					list.add(opening);
 					sound.start();
-				
 				}
 			}
 			
+			//if the color combination of flowers is correct, the opening with seeds with unhidden
+			//this can only happen once
 			if(allTrue(correctflower) && flowers){
 				flowers = false;
 				openingUnhidden = true;
 				list.add(seedsAndOpening);
 			}
-			
-		
-			
 			repaint();
 		}		
 	}
 	
+	/*
+	 * This method checks if the flower colors are in the right order
+	 */
 	public boolean allTrue(boolean[] a){
 		
 		for(int i = 0; i < a.length; i++){
@@ -207,27 +226,21 @@ public class FourthWall extends WallPanel{
 	public void paintComponent(Graphics g){
 		super.paintComponent(g);	
 		
+		//if light is turned off
 		if(switchClicked){
-			if(unhidden){
-			for(BufferedIm x: list)
+			
+				for(BufferedIm x: list)
 				g.drawImage(x.getBI(), 0, 0, null); 
 			
-				
-			for(BufferedIm x: flower)
-				g.drawImage(x.getBI(), 0, 0, null); 
-			
-			g.drawImage(black.getBI(), 0, 0, null); 
-			g.drawImage(blackLight.getBI(), 0, 0, null); 
-			
-			}
-			else{
-			for(BufferedIm x: list)
-				g.drawImage(x.getBI(), 0, 0, null); 
-			for(BufferedIm x: flower)
-				g.drawImage(x.getBI(), 0, 0, null); 
+				//flowers are drawn at the end, separately	
+				for(BufferedIm x: flower)
+					g.drawImage(x.getBI(), 0, 0, null); 
 			
 				g.drawImage(black.getBI(), 0, 0, null); 
-			}
+				
+				//if the safe on the second wall is unlocked, draw the red light
+				if(unhidden)
+					g.drawImage(blackLight.getBI(), 0, 0, null); 
 		}
 		
 		else{

@@ -2,7 +2,9 @@ package escape;
 
 import javax.swing.JFrame;
 
-
+/**
+ * This class sets the JFrame and runs a new game
+ */
 
 public class EscapeGame extends JFrame{	//sets frame
 

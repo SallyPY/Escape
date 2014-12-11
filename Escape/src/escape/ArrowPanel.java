@@ -13,7 +13,7 @@ import javax.swing.plaf.basic.BasicArrowButton;
 
 import walls.WallBegin;
 
-/*
+/**
  * ArrowPanel creates a JPanel with a specific direction-facing button that responds to clicks
  */
 
@@ -43,16 +43,7 @@ public class ArrowPanel extends JPanel implements ActionListener{
 			arrow.addActionListener(this);
 			add(arrow,c);
 		}
-		else if(s.equals("down")){
-			arrow = new BasicArrowButton(BasicArrowButton.SOUTH);	/*produces an up-facing arrow*/
-			arrow.addActionListener(this);
-			add(arrow,c);
-		}
-		else {
-			arrow = new BasicArrowButton(BasicArrowButton.NORTH);	/*produces a down-facing arrow*/
-			arrow.addActionListener(this);
-			add(arrow,c);
-		}	
+
 	}
 	
 	/*
@@ -61,7 +52,7 @@ public class ArrowPanel extends JPanel implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource().equals(arrow)){
-			if(arrow.getDirection()== BasicArrowButton.EAST||arrow.getDirection()== BasicArrowButton.NORTH)
+			if(arrow.getDirection()== BasicArrowButton.EAST)
 				cl.next(parent);
 			else
 				cl.previous(parent);

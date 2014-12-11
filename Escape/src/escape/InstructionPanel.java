@@ -6,7 +6,7 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-/*
+/**
  * This InstructionPanel displays and formats the instructions of the game
  */
 public class InstructionPanel extends JPanel{

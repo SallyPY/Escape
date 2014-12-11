@@ -14,8 +14,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-/*
- * Game begins by showing the main menu, which contains the instructions and the buttons either starting or exiting the game
+/**
+ * The game begins by showing the main menu, which contains the instructions and the buttons either starting or exiting the game
  */
 public class MainMenu extends JPanel implements ActionListener{
 	private JButton startButton, exitButton;
@@ -42,7 +42,7 @@ public class MainMenu extends JPanel implements ActionListener{
 		c.ipady=200;
 		c.ipadx=50;
 		
-		add(new InstructionPanel(), c); //adding instructions
+		add(new InstructionPanel(), c); //adds instructions
 		
 		c.gridx = 0;
 		c.gridy = 1;
@@ -63,7 +63,7 @@ public class MainMenu extends JPanel implements ActionListener{
     	g.drawImage(new ImageIcon(url).getImage(),0,0,null);
     }
     
-    private class ButtonPanel extends JPanel{ //panel holding the buttons
+    private class ButtonPanel extends JPanel{ //panel that holds the buttons
     	
     	public ButtonPanel(){
     		super();
@@ -86,13 +86,13 @@ public class MainMenu extends JPanel implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource().equals(exitButton)) {
+		if (e.getSource().equals(exitButton)) {//exits if exitButton is pushed
 			System.exit(0);
 		}
 		
 		if (e.getSource().equals(startButton)) 
 		setVisible(false);
-		frame.setContentPane(new GamePanel()); //begins a GamePanel
+		frame.setContentPane(new GamePanel()); //begins a new GamePanel if startButton is pushed
 		frame.getContentPane().remove(this);	
 		
 	}    

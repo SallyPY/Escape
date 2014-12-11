@@ -1,6 +1,6 @@
 package escape;
 
-import images.ImageSpacePanel;
+import images.ImageInventoryPanel;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -10,13 +10,13 @@ import javax.swing.JPanel;
 import walls.WallBegin;
 
 /*
- * The GamePanel holds the arrow buttons, the space containing the collected items, and the images of the room
- * The most interaction from the user will occur here
+ * The GamePanel holds the arrow buttons, the space containing the collected items, and the drawings/images of the room.
+ * The most interaction from the user will occur here.
  */
 
 public class GamePanel extends JPanel{
 	
-	public ImageSpacePanel sp;
+	public ImageInventoryPanel sp;
 	WallBegin w;
 	ArrowPanel right;
 	ArrowPanel left;
@@ -32,7 +32,7 @@ public class GamePanel extends JPanel{
 		caption = new CaptionPanel();
 		add(caption, BorderLayout.NORTH);
 		
-		sp = new ImageSpacePanel(this);	//add the collection space at the bottom
+		sp = new ImageInventoryPanel(this);	//add the collection space at the bottom
 		add(sp, BorderLayout.SOUTH);
 	
 		w = new WallBegin(this, sp); //add the sides of the rooms in the center
@@ -45,7 +45,7 @@ public class GamePanel extends JPanel{
 		add(left, BorderLayout.WEST);
 	}
 	
-	public ImageSpacePanel getImageSpacePanel(){return sp;}	
+	public ImageInventoryPanel getImageSpacePanel(){return sp;}	//method that returns sp
 }
 	
 

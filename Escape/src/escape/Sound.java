@@ -6,7 +6,11 @@ import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
  
-   
+  /**
+   * This class is used for sound effects.
+   * It handles .wav files to create Sound objects
+   *
+   */
 
 public class Sound {
 	String soundName;   
