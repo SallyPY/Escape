@@ -33,9 +33,9 @@ public class MainMenu extends JPanel implements ActionListener{
 	    
 	    GridBagLayout gl = new GridBagLayout();
 		setLayout(gl);
+		
 		GridBagConstraints c = new GridBagConstraints();
 		c.fill = GridBagConstraints.HORIZONTAL;
-		
 		c.gridx = 0;
 		c.gridy = 0;	
 		c.insets= new Insets(0,0,20,0);
@@ -46,11 +46,12 @@ public class MainMenu extends JPanel implements ActionListener{
 		
 		c.gridx = 0;
 		c.gridy = 1;
-		//c.gridheight=20;
 		c.ipady=20;
 		c.ipadx=300;
 		c.insets= new Insets(20,0,0,0);
+		
 		add(new ButtonPanel(),c);
+		
 		startButton.addActionListener(this);
 		exitButton.addActionListener(this);
 		

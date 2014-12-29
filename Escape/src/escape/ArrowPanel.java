@@ -33,13 +33,14 @@ public class ArrowPanel extends JPanel implements ActionListener{
 		
 		
 		c.insets = new Insets(0,10,0,10);
+		
 		if(s.equals("right")){		
-			arrow = new BasicArrowButton(BasicArrowButton.EAST);	/*produces a right-facing arrow*/
+			arrow = new BasicArrowButton(BasicArrowButton.EAST);	//produces a right-facing arrow
 			arrow.addActionListener(this);
 			add(arrow, c);
 		}
 		else if(s.equals("left")){
-			arrow = new BasicArrowButton(BasicArrowButton.WEST);	/*produces a left-facing arrow*/
+			arrow = new BasicArrowButton(BasicArrowButton.WEST);	//produces a left-facing arrow
 			arrow.addActionListener(this);
 			add(arrow,c);
 		}
@@ -47,15 +48,15 @@ public class ArrowPanel extends JPanel implements ActionListener{
 	}
 	
 	/*
-	 * This method travels across the panels in CardLayout when arrow is clicked
+	 * This method travels across the panels in cl when an arrow is clicked
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource().equals(arrow)){
-			if(arrow.getDirection()== BasicArrowButton.EAST)
+			if(arrow.getDirection()== BasicArrowButton.EAST)	//travels to right panel if the right arrow is clicked
 				cl.next(parent);
 			else
-				cl.previous(parent);
+				cl.previous(parent);							//else it travels to the left panel
 		}	
 	}
 }

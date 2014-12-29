@@ -9,7 +9,6 @@ import javax.sound.sampled.Clip;
   /**
    * This class is used for sound effects.
    * It handles .wav files to create Sound objects
-   *
    */
 
 public class Sound {
@@ -31,10 +30,12 @@ public class Sound {
 
 	}
 	
+	/*
+	 * The start() plays the sound file
+	 */
 	public void start(){
 		clip.setFramePosition(0);
 		clip.start();
-
 	}
 
 }

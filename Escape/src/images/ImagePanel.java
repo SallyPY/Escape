@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
- * Panel that specifies what image goes into each space on the ImageSpacePanel grid. Each item has a specific location. 
+ * Panel that specifies what image goes into each space on the ImageInventoryPanel grid. Each item has a specific location. 
  * This image is incorporated into an ImageLabel object first.
  */
 

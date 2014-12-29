@@ -104,6 +104,7 @@ public class SecondWall extends WallPanel{
 			if(unlocked)	//if the safe is unlocked, the red light is drawn over
 				g.drawImage(blackLight.getBI(), 0, 0, null);	
 		}
+		
 		else
 			for(BufferedIm x: list)
 				g.drawImage(x.getBI(), 0, 0, null);  					

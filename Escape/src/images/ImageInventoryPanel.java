@@ -25,7 +25,7 @@ public class ImageInventoryPanel extends JPanel{
 
 		panelHolder = new ImagePanel[8];    
 
-		//sets the 8 individual ImagePanels up and organizes them into the ImageSpacePanel
+		//sets the 8 individual ImagePanel objects up and organizes them into the ImageInventoryPanel panel
 		for(int m = 0; m < 8; m++) {
 		      panelHolder[m] = new ImagePanel(m, this);
 		      panelHolder[m].setPreferredSize(new Dimension(50,60));

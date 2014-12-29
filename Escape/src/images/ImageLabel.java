@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
 /**
- * The ImageLabel class creates an ImageLabel object out of a specific image given from the ImagePanel class
+ * This class creates an ImageLabel object out of a specific image given from the ImagePanel class
  */
 public class ImageLabel extends JLabel{
 	boolean clicked;
@@ -23,7 +23,10 @@ public class ImageLabel extends JLabel{
 		addMouseListener(new MyMouseListener());
 	}
 	
-	class MyMouseListener extends MouseAdapter{ //Selects the item the user clicks and deselects the rest
+	class MyMouseListener extends MouseAdapter{ 
+		/*
+		 * The mouseClicked method selects the item the user clicks(turns the background gray) and deselects the rest of the inventory
+		 */
 		public void mouseClicked(MouseEvent e){
 			for(int i = 0; i < 8; i++)
 				if(isp.panelHolder[i].isClicked() == true && isp.panelHolder[i] != ip){

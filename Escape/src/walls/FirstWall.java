@@ -140,7 +140,7 @@ public class FirstWall extends WallPanel {
 				g.drawImage(x.getBI(), 0, 0, null); 
 			g.drawImage(black.getBI(), 0, 0, null); 
 		}
-		else
+		else	//else only the black image is not drawn
 			for(BufferedIm x: list)
 				g.drawImage(x.getBI(), 0, 0, null); 		
 		
