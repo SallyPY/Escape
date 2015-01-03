@@ -1,10 +1,13 @@
 Escape
 ======
 
-Final Programming Assignment
+<h2>Introduction</h2>
 
-This will be a simple room escape game using Java Swing. It will act as my final assignment for my fall 2014 intro to compsci class. 
-The code is at the hands of a beginner and a new user to GitHub, so be aware of inefficiencies.
+<p>A room escape game is what it sounds like: a game where a user must get out of a locked room, usually through solving a progression of puzzles. <a href="http://neutralxe.net/esc/sphere_play.html">This</a> is a good example.</p>
+
+<p>My game a simple Java room escape game using eclipse. It will act as my final assignment for my Fall 2014 Intro to Computer Science class. </p>
+
+<p>The code is at the hands of a beginner and a new user to GitHub, so there will be problems on the way.</p>
 
 11/15
 Having issues navigating GitHub. I will need to do more research. There is trouble with committing, branching, syncing, etc.
