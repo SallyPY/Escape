@@ -59,14 +59,14 @@ Escape
 
 <p>I couldn’t incorporate all the features I wanted due to limitations in my programming ability and time. These include zooming in on a specific wall or item being able to view a selected item up close, and having more complex, realistic puzzles. </p>
 
-<p>Regarding my limitation on puzzles, I don’t think the way I structured my flower puzzle was well-done. I had a hard time figuring out a way to check if all the right flowers were clicked, and there seems to be a lot of code for such a small part of the game. I didn’t even attempt trying to incorporate a numberpad lock, which many room escape games seem to have.</p>
+<p>Regarding my limitation on puzzles, I don’t think the way I structured my flower puzzle was well-done. I had a hard time figuring out a way to check if all the right flowers were clicked, and there seems to be a lot of code for such a small part of the game. </p>
 
 <p>The most difficult part was handling the classes in the image package. The ImageSpacePanel, ImageLabel, and ImagePanel classes allowed for the collection of items around the room and the interaction between the inventory and wall. However, the code for this is convoluted and not as straightforward/readable as I feel it should be. And with this code, I couldn’t find a clean way to click on a collected item and view it up close.</p>
 <hr>
 
 <h2>Conclusion</h2>
 
-<p>Overall, my game meets my expectations as a room escape game. Although the drawings aren’t ready for mass distribution, I enjoyed creating them and also surprisingly like them.  These games usually have sound effects, which I think for my project adds to the room escape atmosphere. I’m satisfied with how I handled the mouse clicks in different regions and how I got the arrow panels on either side of the walls to switch wall panels.</p>
+<p>Overall, I'm proud of my game. Although the drawings aren’t ready for mass distribution, I enjoyed creating them and also surprisingly like them.  I think the sound effects add to the room escape atmosphere, and I’m satisfied with how I handled the mouse clicks in different regions. There definitely needs improvment. In the future, I will come back and make some of my code more readable and fix inconsistencies with naming conventions </p>
 
 <hr>
 
