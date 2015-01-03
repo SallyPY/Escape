@@ -24,7 +24,7 @@ Escape
 
 <hr>
 
-<h2>Walkthrough</h2>
+<h2>Walkthrough*</h2>
 
 <p>1st wall:</p>
   <ul>
@@ -51,6 +51,7 @@ Escape
     <li>Retrieve the key.</li>
     <li>Go to wall 1 and use the key on the door.</li>
   </ul>
+<p>*These instructions don’t have an exact order, but especially towards the end you can’t complete steps without doing others first.</p>
 
 <hr>
 
