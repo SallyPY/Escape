@@ -5,17 +5,17 @@ Escape
 
 <p>A room escape game is what it sounds like: a game where a user must get out of a locked room, usually through solving a progression of puzzles. <a href="http://neutralxe.net/esc/sphere_play.html">This</a> is a good example.</p>
 
-<p>My game is a simple Java room escape game using eclipse, and it acts as the final assignment for my Fall 2014 Intro to Computer Science class. </p>
+<p>My game is a simple Java room escape game using Eclipse, and it acts as the final assignment for my Fall 2014 Intro to Computer Science class. </p>
 
 <p>Development relied on the Swing GUI. Gimp 2 was used to create the graphics.</p>
 
 
 <hr>
-<h2>Running the zip file with eclipse</h2>
+<h2>Running the zip file with Eclipse</h2>
 <div>
   <ol>
-    <li>Unzip my file.</li>
-    <li>In eclipse, File->Import->General->Import Existing Projects Into Workspace. Browse for my file in the root directory section. You might have to change the JRE System Library to one compatible with mine. I used JavaSE 1.8.</li>
+    <li>Download and unzip the file.</li>
+    <li>In Eclipse, File->Import->General->Import Existing Projects Into Workspace. Browse for my file in the root directory section. You might have to change the JRE System Library to one compatible with mine. I used JavaSE 1.8.</li>
     <li>Do this by right-clicking the Escape folder, Properties ->Libraries</li>
     <li>Remove the current library by selecting it and clicking Remove Library. Add a compatible library.</li>
     <li>On the main toolbar, Run.</li>
