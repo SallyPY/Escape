@@ -66,7 +66,7 @@ Escape
 
 <h2>Conclusion</h2>
 
-<p>Overall, I'm proud of my game. Although the drawings aren’t ready for mass distribution, I enjoyed creating them and also surprisingly like them.  I think the sound effects add to the room escape atmosphere, and I’m satisfied with how I handled the mouse clicks in different regions. There definitely needs improvment. In the future, I will come back and make some of my code more readable and fix inconsistencies with naming conventions </p>
+<p>Overall, I'm proud of my game. Although the drawings aren’t ready for mass distribution, I enjoyed creating them and surprisingly like them aesthetically.  The sound effects add to the room escape atmosphere, and I’m satisfied with how I handled mouse clicks based on where they occurred. However, there definitely needs improvement. In the future, I'll come back and make my code more readable as well as fix inconsistencies with naming conventions. </p>
 
 <hr>
 
@@ -79,7 +79,7 @@ Escape
 Having issues navigating GitHub. I will need to do more research. There is trouble with committing, branching, syncing, etc.
 
 <b>11/22</b><br>
-Removed metadata folder with a .gitignore file
+Removed metadata folder with a .gitignore file.
 
 <b>12/1</b><br>
 Got a lot done over Thanksgiving break. You can actually win the game!
@@ -97,5 +97,5 @@ Sound added.
 I think this is the end. It has been a good run.
 
 <b>1/2</b><br>
-README edited to be more readable.
+Added HTML to README for readability.
 
