@@ -9,6 +9,10 @@ Escape
 
 <p>Development relied on the Swing GUI. Gimp 2 was used to create the graphics.</p>
 
+<p>Below is an image of one of the walls.</p>
+
+![alt tag](https://github.com/SallyPY/Escape/blob/master/Escape/src/res/second/secWallBack.png)
+
 
 <hr>
 <h2>Running the zip file with Eclipse</h2>
