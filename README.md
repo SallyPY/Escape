@@ -59,7 +59,7 @@ Escape
 
 <hr>
 
-<h2>Limitations</p>
+<h2>Limitations</h2>
 
 <p>I couldn’t incorporate all the features I wanted due to limitations in my programming ability and time. These include zooming in on a specific wall or item being able to view a selected item up close, and having more complex, realistic puzzles. </p>
 
